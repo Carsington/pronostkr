@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
-<!-- Active URL: https://kitt.lewagon.com/db/4171 -->
+<!-- Active URL: https://kitt.lewagon.com/db/4325 -->
 <sql>
 <datatypes db="postgresql">
   <group label="Numeric" color="rgb(238,238,170)">
@@ -38,14 +38,14 @@
     <type label="Inet CIDR Addr" length="0" sql="CIDR" quote="'"/>
     <type label="Geometry" length="0" sql="GEOMETRY" quote="'"/>
   </group>
-</datatypes><table x="67" y="406" name="users">
+</datatypes><table x="159" y="501" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="email" null="0" autoincrement="0">
+<row name="(email)" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>'NULL'</default></row>
-<row name="encrypted_password" null="1" autoincrement="0">
+<row name="(encrypted_password)" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="username" null="1" autoincrement="0">
@@ -58,7 +58,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="1003" y="706" name="games">
+<table x="1095" y="801" name="games">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -72,7 +72,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="755" y="554" name="competitions">
+<table x="847" y="649" name="competitions">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -99,7 +99,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="1245" y="192" name="teams">
+<table x="1349" y="314" name="teams">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -116,7 +116,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="1495" y="228" name="players">
+<table x="1597" y="361" name="players">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -134,18 +134,15 @@
 <part>id</part>
 </key>
 </table>
-<table x="547" y="548" name="leagues">
+<table x="621" y="679" name="leagues">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="pin" null="1" autoincrement="0">
+<row name="slug" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="is_private" null="1" autoincrement="0">
-<datatype>BOOLEAN</datatype>
 <default>NULL</default></row>
 <row name="photo.attached" null="1" autoincrement="0">
 <datatype>BIT</datatype>
@@ -158,7 +155,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="271" y="604" name="user_leagues">
+<table x="421" y="548" name="user_leagues">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -170,11 +167,14 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="leagues" row="id" />
 </row>
+<row name="is_owner" null="1" autoincrement="0">
+<datatype>BOOLEAN</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="341" y="439" name="messages">
+<table x="391" y="972" name="messages">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -193,7 +193,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="993" y="461" name="matches">
+<table x="1085" y="556" name="matches">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -204,17 +204,11 @@
 <row name="scheduled_time" null="1" autoincrement="0">
 <datatype>TIMESTAMP</datatype>
 <default>NULL</default></row>
-<row name="is_team_a_winner" null="1" autoincrement="0">
-<datatype>BOOLEAN</datatype>
-<default>NULL</default></row>
-<row name="is_team_b_winner" null="1" autoincrement="0">
-<datatype>BOOLEAN</datatype>
-<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="542" y="187" name="forecasts">
+<table x="652" y="222" name="forecasts">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -222,35 +216,19 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="users" row="id" />
 </row>
-<row name="team_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="teams" row="id" />
-</row>
 <row name="match_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="matches" row="id" />
+</row>
+<row name="team_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="teams" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="1013" y="280" name="match_winners">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="team_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="teams" row="id" />
-</row>
-<row name="match_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="matches" row="id" />
-</row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="1202" y="418" name="match_teams">
+<table x="1278" y="496" name="team_matches">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -262,6 +240,9 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="teams" row="id" />
 </row>
+<row name="is_winner" null="1" autoincrement="0">
+<datatype>BOOLEAN</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
