@@ -2,9 +2,9 @@ class LeaguesController < ApplicationController
 
  def create
   @league = League.new(league_params)
-  @league.user = current_user
+  user_league = UserLeague.new(user: current_user, league: @league, is_owner: true)
 
-  if @league.save
+  if @league.save && user_league.save
     redirect_to @league
   else
     render :new
@@ -13,14 +13,13 @@ end
 
 
 def new
-  @competition = Competition.find(params[:competition_id])
   @league = League.new
 end
 
 private
 
 def league_params
-  params.require(:league).permit(:name, :slug)
+  params.require(:league).permit(:name, :competition)
 end
 
 end
