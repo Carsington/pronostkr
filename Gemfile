@@ -16,6 +16,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# Additional gems come here
+gem 'faker', groups: [:development, :test]
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
