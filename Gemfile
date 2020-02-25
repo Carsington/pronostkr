@@ -15,9 +15,9 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'cloudinary', '~> 1.12.0'
 
 # Additional gems come here
+gem 'cloudinary', '~> 1.12.0'
 gem 'faker', groups: [:development, :test]
 
 group :development do
