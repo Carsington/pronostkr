@@ -38,7 +38,7 @@
     <type label="Inet CIDR Addr" length="0" sql="CIDR" quote="'"/>
     <type label="Geometry" length="0" sql="GEOMETRY" quote="'"/>
   </group>
-</datatypes><table x="159" y="501" name="users">
+</datatypes><table x="165" y="487" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -72,11 +72,11 @@
 <part>id</part>
 </key>
 </table>
-<table x="847" y="649" name="competitions">
+<table x="848" y="650" name="competitions">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="full_name" null="1" autoincrement="0">
+<row name="name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="description" null="1" autoincrement="0">
@@ -134,7 +134,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="621" y="679" name="leagues">
+<table x="621" y="678" name="leagues">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -144,13 +144,13 @@
 <row name="name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="photo.attached" null="1" autoincrement="0">
-<datatype>BIT</datatype>
-<default>NULL</default></row>
 <row name="competition_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="competitions" row="id" />
 </row>
+<row name="photo.attached" null="1" autoincrement="0">
+<datatype>BIT</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
@@ -174,7 +174,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="391" y="972" name="messages">
+<table x="397" y="871" name="messages">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -197,13 +197,13 @@
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
+<row name="scheduled_time" null="1" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>NULL</default></row>
 <row name="competition_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="competitions" row="id" />
 </row>
-<row name="scheduled_time" null="1" autoincrement="0">
-<datatype>TIMESTAMP</datatype>
-<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
