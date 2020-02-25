@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   after_create :attach_default_image
+  
+  has_one_attached :photo
 
   has_many :forecasts
   has_many :user_leagues
