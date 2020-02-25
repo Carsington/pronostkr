@@ -8,6 +8,7 @@ Team.destroy_all
 Match.destroy_all
 League.destroy_all
 Competition.destroy_all
+Game.destroy_all
 
 
 puts "Creating new instances..."
@@ -100,6 +101,19 @@ League.all.each do |league|
       is_owner: [true, false].sample # TODO: change to only 1 league owner
     )
   end
+end
+
+# FORECASTS
+100.times do
+  user = User.all.sample
+  match = Match.all.sample
+  teams = TeamMatch.where(match: match).map { |teammatch| teammatch.team }
+
+  Forecast.create!(
+    user: user,
+    match: match,
+    team: teams.sample
+  )
 end
 
 puts "Success!"
