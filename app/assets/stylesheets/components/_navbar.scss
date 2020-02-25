@@ -1,6 +1,40 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $dark-gray;
+
+  .navbar-nav {
+    align-items: center;
+  }
+
+  .nav-link {
+    color: white !important;
+  }
+
+  .nav-link:hover {
+    color: white !important;
+  }
+
+  .fa-circle {
+    font-size: 10px;
+    color: $red;
+    vertical-align: 2px;;
+  }
+
+  .live-btn-2 {
+    padding: 2px 6px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: $red;
+    color: white !important;
+  }
+
+  #navbarDropdown {
+    margin-left: 12px;
+  }
+
+  img#navbarDropdown.avatar.dropdown-toggle:hover{
+    cursor: pointer
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
