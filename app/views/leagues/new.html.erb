@@ -1,0 +1,5 @@
+<%= simple_form_for([@competition, @league]) do |f| %>
+        <%= f.input :slug, as: :string, label: "enter your pin", placeholder: "Pin" %>
+        <%= f.input :name, as: :string, label: 'enter the name', placeholder: "Name" %>
+        <%= f.submit "Create your league", class: "btn btn-primary btn-block" %>
+      <% end %>

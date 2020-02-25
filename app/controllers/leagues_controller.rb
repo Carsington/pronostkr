@@ -13,6 +13,7 @@ end
 
 
 def new
+  @competition = Competition.find(params[:competition_id])
   @league = League.new
 end
 
