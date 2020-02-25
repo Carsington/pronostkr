@@ -84,7 +84,7 @@ end
 10.times do |i|
   League.create!(
     slug: Faker::Lorem.unique.characters(number: 6).upcase,
-    name: "League #{i*i}", 
+    name: "League #{i*i}",
     competition: Competition.all.sample
   )
 end
@@ -101,3 +101,5 @@ League.all.each do |league|
     )
   end
 end
+
+puts "Success!"
