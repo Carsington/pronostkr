@@ -1,0 +1,19 @@
+  <div class="row competition-page">
+    <div class="col-9">
+      <h1><%= @competition.name %></h1>
+      <h3><%= @competition.game.full_name %></h3>
+
+      <div class="competition-infos">
+        <p><%= @competition.location %></p>
+        <div class="start-end-dates">
+          <p>Début : <%= @competition.start_date %></p>
+          <p>Fin : <%= @competition.end_date %></p>
+        </div>
+        <p><%= @competition.description %></p>
+      </div>
+
+      <div class="forecasts">
+
+      </div>
+    </div>
+  </div>
