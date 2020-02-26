@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>PronostkR - A fun forecasts platform on esports competitions</title>
-    <link rel="icon" href="/favicon.png" />
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-  </head>
-  <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
 
-    <%= javascript_pack_tag 'application' %>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>PronostkR &nbsp; | &nbsp; A fun forecasts platform on esports competitions</title>
+  <link rel="icon" href="/favicon.png" />
+
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+</head>
+
+<body>
+  <%= render 'shared/navbar' %>
+
+  <div class="container">
+    <%= render 'shared/flashes' %>
+
+    <%= yield %>
+
+  </div>
+
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_pack_tag 'application' %>
+
+  <footer>
+    <%= render 'shared/footer' %>
+  </footer>
+
+</body>
 </html>
