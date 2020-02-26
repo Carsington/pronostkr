@@ -12,39 +12,36 @@
         <p><%= @competition.description %></p>
       </div>
 
-<!-- Competition.first.matches.first.team_matches[0].team.name -->
       <div class="matches">
         <% @competition.matches.each do |match| %>
-          <div class="card-match">
-            <% match.team_matches.each do |team_match| %>
-              <div class="card-forecast">
-                <div>
-                  <h3><%= team_match[0].team.name %></h3>
-                  <p><%= team_match[0].team.nationality %></p>
-                </div>
-                <p>vs</p>
-                <div>
-                  <h3><%= team_match[1].team.name %></h3>
-                  <p><%= team_match[1].team.nationality %></p>
-                </div>
+          <div class="card-match border border-secondary p-2 my-3">
+            <div class="card-forecast text-center d-flex align-items-center">
+              <div class="border w-75 mx-auto border-primary">
+                <h3><%= match.team_matches[0].team.name %></h3>
+                <p><%= match.team_matches[0].team.nationality %></p>
               </div>
-            <% end %>
+              <p class="px-2">vs</p>
+              <div class="border w-75 mx-auto border-danger">
+                <h3><%= match.team_matches[1].team.name %></h3>
+                <p><%= match.team_matches[1].team.nationality %></p>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>
     </div>
 
     <div class="col-3">
-      <div class="card" style="height: 80px; text-align: center; margin-top: 20px;">
+      <div class="card">
         <p><%= link_to "Créer une ligue", new_competition_league_path(@competition) %></p>
       </div>
-      <div class="card" style="height: 80px; text-align: center; margin-top: 20px;">
+      <div class="card">
         <p>Rejoindre la ligue générale</p>
       </div>
-      <div class="card" style="height: 80px; text-align: center; margin-top: 20px;">
+      <div class="card">
         <p><%= link_to "Ma ligue 1", competition_league_path(@competition) %></p>
       </div>
-      <div class="card" style="height: 80px; text-align: center; margin-top: 20px;">
+      <div class="card">
         <p><%= link_to "Ma ligue 1", competition_league_path(@competition) %></p>
       </div>
     </div>
