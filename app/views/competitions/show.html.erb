@@ -1,7 +1,9 @@
   <div class="row competition-page">
     <div class="col-9">
-      <h1><%= @competition.name %></h1>
-      <h3><%= @competition.game.full_name %></h3>
+      <div class="competition-header">
+        <h1><%= @competition.name %></h1>
+        <h3><%= @competition.game.full_name %></h3>
+      </div>
 
       <div class="competition-infos">
         <p><%= @competition.location %></p>
@@ -32,16 +34,16 @@
     </div>
 
     <div class="col-3">
-      <div class="card">
+      <div class="border border-secondary text-center">
         <p><%= link_to "Créer une ligue", new_competition_league_path(@competition) %></p>
       </div>
-      <div class="card">
+      <div class="border border-secondary text-center">
         <p>Rejoindre la ligue générale</p>
       </div>
-      <div class="card">
+      <div class="border border-secondary text-center">
         <p><%= link_to "Ma ligue 1", competition_league_path(@competition) %></p>
       </div>
-      <div class="card">
+      <div class="border border-secondary text-center">
         <p><%= link_to "Ma ligue 1", competition_league_path(@competition) %></p>
       </div>
     </div>
