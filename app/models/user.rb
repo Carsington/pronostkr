@@ -8,7 +8,6 @@ class User < ApplicationRecord
 
   after_create :attach_default_image
 
-
   has_many :user_leagues, dependent: :destroy
   has_many :leagues, through: :user_leagues
   has_many :forecasts, dependent: :destroy
