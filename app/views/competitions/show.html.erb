@@ -35,16 +35,15 @@
 
     <div class="col-3">
       <div class="border border-secondary text-center">
-        <p><%= link_to "Créer une ligue", new_competition_league_path(@competition) %></p>
+        <p><%= link_to "Créer une ligue", new_league_path(@league) %></p>
       </div>
       <div class="border border-secondary text-center">
-        <p>Rejoindre la ligue générale</p>
+        <p><%= link_to "Rejoindre la ligue générale" %></p>
       </div>
-      <div class="border border-secondary text-center">
-        <p><%= link_to "Ma ligue 1", competition_league_path(@competition) %></p>
-      </div>
-      <div class="border border-secondary text-center">
-        <p><%= link_to "Ma ligue 1", competition_league_path(@competition) %></p>
-      </div>
+      <% @competition.leagues.each do |league| %>
+        <div class="border border-secondary text-center">
+          <p><%= link_to league.name, league_path(@league) %></p>
+        </div>
+      <% end %>
     </div>
   </div>
