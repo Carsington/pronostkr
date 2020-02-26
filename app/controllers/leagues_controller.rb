@@ -11,7 +11,6 @@ class LeaguesController < ApplicationController
   end
 end
 
-
 def new
   @league = League.new
 end
