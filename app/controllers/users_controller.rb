@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+  def dashboard
+    @page_title = "Tableau de bord"
+    @user = current_user
+  end
+
   def show
+    @user = User.find(params[:id])
+  end
+
+  def edit
   end
 end

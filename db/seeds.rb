@@ -1,5 +1,13 @@
 require 'faker'
 
+N_USERS = 10
+N_COMPETITIONS = 5
+N_TEAMS = 10
+N_PLAYERS = 50
+N_MATCHES = 30
+N_LEAGUES = 10
+N_FORCASTS = 100
+
 puts "Destroying old instances..."
 
 User.destroy_all
@@ -14,7 +22,7 @@ Game.destroy_all
 puts "Creating new instances..."
 
 # USERS
-10.times do
+N_USERS.times do
   username = Faker::Internet.unique.username
 
   User.create!(
@@ -23,14 +31,16 @@ puts "Creating new instances..."
     password: "cocorico"
   )
 end
+puts "Built #{User.count} User instances!"
 
 
 # GAME
 Game.create!(full_name: "Counter-Strike: Global Offensive", acronym: "csgo")
 Game.create!(full_name: "League of Legends", acronym: "lol")
+puts "Built LOL & CSGO Game instances!"
 
 # COMPETITIONS
-5.times do |i|
+N_COMPETITIONS.times do |i|
   Competition.create!(
     name: "Competition #{i*i}",
     description: Faker::Lorem.unique.paragraph(sentence_count: 15),
@@ -40,26 +50,29 @@ Game.create!(full_name: "League of Legends", acronym: "lol")
     game: Game.all.sample
   )
 end
+puts "Built #{Competition.count} Competition instances!"
 
 # TEAMS
-10.times do
+N_TEAMS.times do
   Team.create!(
     name: Faker::Team.unique.name,
     nationality: Faker::Address.unique.country
   )
 end
+puts "Built #{Team.count} Team instances!"
 
 # PLAYERS
-50.times do
+N_PLAYERS.times do
   Player.create!(
     scene_name: Faker::Internet.unique.domain_word,
     full_name: Faker::Name.unique.name,
     team: Team.all.sample
   )
 end
+puts "Built #{Player.count} Player instances!"
 
 # MATCHES
-30.times do
+N_MATCHES.times do
   competition = Competition.all.sample
 
   Match.create!(
@@ -67,6 +80,7 @@ end
     competition: competition
   )
 end
+puts "Built #{Match.count} Match instances!"
 
 # TEAM_MATCHES
 Match.all.each do |match|
@@ -79,16 +93,18 @@ Match.all.each do |match|
   TeamMatch.create!(match: match, team: team_a, is_winner: outcome)
   TeamMatch.create!(match: match, team: team_b, is_winner: outcome.nil? ? nil : !outcome)
 end
+puts "Built #{TeamMatch.count} TeamMatch instances!"
 
 
 # LEAGUES
-10.times do |i|
+N_LEAGUES.times do |i|
   League.create!(
     slug: Faker::Lorem.unique.characters(number: 6).upcase,
     name: "League #{i*i}",
     competition: Competition.all.sample
   )
 end
+puts "Built #{League.count} League instances!"
 
 # USER_LEAGUES
 League.all.each do |league|
@@ -102,12 +118,13 @@ League.all.each do |league|
     )
   end
 end
+puts "Built #{UserLeague.count} UserLeague instances!"
 
 # FORECASTS
-100.times do
+N_FORCASTS.times do
   user = User.all.sample
   match = Match.all.sample
-  teams = TeamMatch.where(match: match).map { |teammatch| teammatch.team }
+  teams = match.teams
 
   Forecast.create!(
     user: user,
@@ -115,5 +132,6 @@ end
     team: teams.sample
   )
 end
+puts "Built #{Forecast.count} Forecast instances!"
 
 puts "Success!"
