@@ -1,0 +1,32 @@
+<div class="row justify-content-center mt-4 border border-primary">
+  <% @user.leagues.each do |league| %>
+    <div class="col-4 border rounded border-secondary">
+      <%= league.name %>
+      <%= league.slug %>
+      <%= league.competition.name %>
+      <%= league.competition.start_date %>
+      <%= league.competition.end_date %>
+      <%= league.competition.game.acronym %>
+      <%= link_to "LEAGUE_LINK", league %>
+    </div>
+  <% end %>
+</div>
+
+<div class="row justify-content-around mt-4 border border-primary">
+  <div class="col-5 border rounded border-secondary">
+    Crée une nouvelle ligue et invite tes potes
+    <%#= render 'buttons/new_league' %>
+    <%= link_to "CREATE_LEAGUE", new_league_path %>
+  </div>
+  <div class="col-5 border rounded border-secondary">
+    Rejoins une ligue existante
+    <%#= render 'buttons/join_league' %>
+  </div>
+</div>
+
+<div class="row justify-content-around mt-4 border border-primary">
+  <div class="col-8 border rounded border-secondary">
+    Une belle barre de recherche en AJAX tmtc
+    <%#= render 'searchbar' %>
+  </div>
+</div>
