@@ -19,7 +19,7 @@ end
 private
 
 def league_params
-  params.require(:league).permit(:name, :competition)
+  params.require(:league).permit(:name, :competition_id)
 end
 
 end
