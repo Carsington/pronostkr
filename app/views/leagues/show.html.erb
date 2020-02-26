@@ -1,18 +1,18 @@
 <div class="row my-pronos">
   <div class="col-6">
     <div class="matches">
-      <h1>Mes pronostiques</h1>
+      <h1>Mes pronos</h1>
       <% @league.competition.matches.each do |match| %>
       <div class="card-match border border-secondary p-2 my-3">
         <div class="card-forecast text-center d-flex align-items-center">
           <div class="border w-75 mx-auto border-primary">
-            <h3><%= match.team_matches[0].team.name %></h3>
-            <p><%= match.team_matches[0].team.nationality %></p>
+            <h3><%= match.teams[0].name %></h3>
+            <p><%= match.teams[0].nationality %></p>
           </div>
           <p class="px-2">vs</p>
           <div class="border w-75 mx-auto border-danger">
-            <h3><%= match.team_matches[1].team.name %></h3>
-            <p><%= match.team_matches[1].team.nationality %></p>
+            <h3><%= match.teams[1].name %></h3>
+            <p><%= match.teams[1].nationality %></p>
           </div>
         </div>
       </div>
