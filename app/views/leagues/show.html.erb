@@ -1,1 +1,34 @@
-<h1>Bonjour je me prénomme Malou </h1>
+<div class="row my-pronos">
+  <div class="col-6">
+    <div class="matches">
+      <h1>Mes pronostiques</h1>
+      <% @league.competition.matches.each do |match| %>
+      <div class="card-match border border-secondary p-2 my-3">
+        <div class="card-forecast text-center d-flex align-items-center">
+          <div class="border w-75 mx-auto border-primary">
+            <h3><%= match.team_matches[0].team.name %></h3>
+            <p><%= match.team_matches[0].team.nationality %></p>
+          </div>
+          <p class="px-2">vs</p>
+          <div class="border w-75 mx-auto border-danger">
+            <h3><%= match.team_matches[1].team.name %></h3>
+            <p><%= match.team_matches[1].team.nationality %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="classement">
+      <h1>Classement</h1>
+      <div class="card-match border border-secondary p-2 my-3">
+        <p>1: <%= User.first.username %></p>
+        <p>2: <%= User.second.username %></p>
+        <p>3: <%= User.third.username %></p>
+        <p>4: <%= User.last.username %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
