@@ -12,8 +12,40 @@
         <p><%= @competition.description %></p>
       </div>
 
-      <div class="forecasts">
+<!-- Competition.first.matches.first.team_matches[0].team.name -->
+      <div class="matches">
+        <% @competition.matches.each do |match| %>
+          <div class="card-match">
+            <% match.team_matches.each do |team_match| %>
+              <div class="card-forecast">
+                <div>
+                  <h3><%= team_match[0].team.name %></h3>
+                  <p><%= team_match[0].team.nationality %></p>
+                </div>
+                <p>vs</p>
+                <div>
+                  <h3><%= team_match[1].team.name %></h3>
+                  <p><%= team_match[1].team.nationality %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
+    <div class="col-3">
+      <div class="card" style="height: 80px; text-align: center; margin-top: 20px;">
+        <p><%= link_to "Créer une ligue", new_competition_league_path(@competition) %></p>
+      </div>
+      <div class="card" style="height: 80px; text-align: center; margin-top: 20px;">
+        <p>Rejoindre la ligue générale</p>
+      </div>
+      <div class="card" style="height: 80px; text-align: center; margin-top: 20px;">
+        <p><%= link_to "Ma ligue 1", competition_league_path(@competition) %></p>
+      </div>
+      <div class="card" style="height: 80px; text-align: center; margin-top: 20px;">
+        <p><%= link_to "Ma ligue 1", competition_league_path(@competition) %></p>
       </div>
     </div>
   </div>
