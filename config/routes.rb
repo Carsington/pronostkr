@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [ :show, :edit ]
-  resources :competitions, only: [ :show ] do
-    resources :leagues, only: [ :show, :new, :create ]
-  end
+  resources :competitions, only: [ :show ]
+  resources :leagues, only: [ :show, :new, :create ]
+
 end
