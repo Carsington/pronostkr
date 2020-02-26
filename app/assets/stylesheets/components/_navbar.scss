@@ -1,17 +1,14 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $dark-gray;
+  color: $white;
 
   .navbar-nav {
     align-items: center;
   }
 
   .nav-link {
-    color: white !important;
-  }
-
-  .nav-link:hover {
-    color: white !important;
+    color: $white !important;
   }
 
   .fa-circle {
@@ -25,7 +22,7 @@
     border: 1px solid transparent;
     border-radius: 4px;
     background-color: $red;
-    color: white !important;
+    color: $white !important;
   }
 
   #navbarDropdown {

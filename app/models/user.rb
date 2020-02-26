@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  after_create :attach_default_image
-  
   has_one_attached :photo
+
+  after_create :attach_default_image
 
   has_many :user_leagues, dependent: :destroy
   has_many :leagues, through: :user_leagues
