@@ -19,13 +19,13 @@
           <div class="card-match border border-secondary p-2 my-3">
             <div class="card-forecast text-center d-flex align-items-center">
               <div class="border w-75 mx-auto border-primary">
-                <h3><%= match.team_matches[0].team.name %></h3>
-                <p><%= match.team_matches[0].team.nationality %></p>
+                <h3><%= match.teams[0].name %></h3>
+                <p><%= match.teams[0].nationality %></p>
               </div>
               <p class="px-2">vs</p>
               <div class="border w-75 mx-auto border-danger">
-                <h3><%= match.team_matches[1].team.name %></h3>
-                <p><%= match.team_matches[1].team.nationality %></p>
+                <h3><%= match.teams[1].name %></h3>
+                <p><%= match.teams[1].nationality %></p>
               </div>
             </div>
           </div>
@@ -35,14 +35,14 @@
 
     <div class="col-3">
       <div class="border border-secondary text-center">
-        <p><%= link_to "Créer une ligue", new_league_path(@league) %></p>
+        <%= link_to "Créer une ligue", new_league_path %>
       </div>
       <div class="border border-secondary text-center">
-        <p><%= link_to "Rejoindre la ligue générale" %></p>
+        <%= link_to "Rejoindre la ligue générale" %>
       </div>
       <% @competition.leagues.each do |league| %>
         <div class="border border-secondary text-center">
-          <p><%= link_to league.name, league_path(@league) %></p>
+          <%= link_to league.name, league_path(@league) %>
         </div>
       <% end %>
     </div>
