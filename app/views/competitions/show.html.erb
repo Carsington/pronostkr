@@ -42,7 +42,7 @@
       </div>
       <% @competition.leagues.each do |league| %>
         <div class="border border-secondary text-center">
-          <%= link_to league.name, league_path(@league) %>
+          <%= link_to league.name, league_path(league) %>
         </div>
       <% end %>
     </div>
