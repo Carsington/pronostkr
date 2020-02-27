@@ -15,8 +15,7 @@
 .create-league-button {
 	background: $tier1-card-bg;
 	color: $tier1-txt;
-	border: 1px solid $tier1-txt;
-	// box-shadow: 3px 3px 10px $gray-999;
+	border: none;
 	padding-top: 2px;
 	padding-bottom: 2px;
 
@@ -27,6 +26,5 @@
 	&:hover {
 		background: $tier1-card-bg-hover;
 		color: $golden-yellow;
-		border: 1px solid $golden-yellow;
 	}
 }

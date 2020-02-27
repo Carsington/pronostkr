@@ -3,7 +3,9 @@ $radius-global: 2px;
 .join {
 	width: 232px;
 	box-shadow: 3px 3px 10px $gray-999;
-	border-radius: $radius-global
+	border-radius: $radius-global;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .join-league-button {
