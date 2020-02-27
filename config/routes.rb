@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  authenticated do
-    root to: redirect('/dashboard')
-  end
+  root to: 'pages#home'
 
-  unauthenticated do
-    root to: 'pages#home'
-  end
+  # authenticated do
+  #   root to: redirect('/dashboard')
+  # end
+
+  # unauthenticated do
+  #   root to: 'pages#home'
+  # end
 
   get '/dashboard', to: 'users#dashboard', as: :dashboard_user
 

@@ -14,7 +14,7 @@ $discord-green:    rgba(  0, 183, 129, 1);
 $discord-orange:   rgba(255, 163,   7, 1);
 $discord-red:      rgba(255,  57,  69, 1);
 $discord-blue:     rgba(107, 138, 219, 1);
-$codingame-yellow: rgba(255, 209,   0, 1);
+$golden-yellow:    rgba(255, 184, 2, 1);
 
 // Shades of grey from Discord
 $gray-0:   rgba(255, 255, 255, 1);
@@ -33,6 +33,8 @@ $gray-999: rgba(  0,   0,   0, 1);
 // Navbar
 $navbar-bg:              $gray-700;
 $navbar-txt:             $gray-0;
+$navbar-link-txt:        $gray-300;
+$navbar-link-txt-hover:  $gray-0;
 
 // Searchbar
 $searchbar-bg:           $gray-700;
