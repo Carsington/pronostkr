@@ -1,76 +1,34 @@
 .league-card {
-  background: $tier1-card-bg;
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("https://pic.clubic.com/v1/images/1775169/raw?width=1200&fit=max&hash=73e51752cc8a9f17d18e110229fae45e2e28a9ba");
+  // background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("https://i.ytimg.com/vi/qKCTarAvuMQ/maxresdefault.jpg");
+  background-size: cover;
   color: $tier1-txt;
   width: 350px;
   padding: 24px;
 
   .league-title {
     color: $golden-yellow;
-    // color: #a2770f;
-    margin-bottom: 0px;
+    margin-bottom: 0;
+    font-weight: bold;
   }
 
-  .league-game {
-    // color: #287093;
+  .league-game, .league-competition {
     margin-bottom: 8px;
-  }
-
-  .league-competition {
-    // color: #0891c5;
-    margin-bottom: 8px;
-  }
-
-  .league-competition-date {
-    // color: #0891c5;
   }
 
   .league-slug {
     color: $golden-yellow;
-    // color: #a2770f;
     margin-bottom: 0;
   }
 
   .league-members-count {
     color: $discord-blue;
-    // color: #287093;
     margin-bottom: 0;
   }
 }
 
 .league-card:hover {
-  background: $tier1-card-bg-hover;
   color: $tier1-txt-selected;
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("https://pic.clubic.com/v1/images/1775169/raw?width=1200&fit=max&hash=73e51752cc8a9f17d18e110229fae45e2e28a9ba");
+  // background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("https://i.ytimg.com/vi/qKCTarAvuMQ/maxresdefault.jpg");
 }
-
-// .league-card:before, .league-card:after, .league-card>:first-child:before, .league-card>:first-child:after {
-//   position: absolute;
-//   width: 8px;
-//   width: 8px;
-//   border-color: $golden-yellow;
-//   border-style: solid;
-//   content: ' ';
-// }
-//
-// .league-card:before {
-//   top: 0;
-//   left: 0;
-//   border-width: 1px 0 0 1px;
-// }
-//
-// .league-card:after {
-//   top: 0;
-//   right: 0;
-//   border-width: 1px 1px 0 0;
-// }
-//
-// .league-card>:first-child:before {
-//   bottom: 0;
-//   right: 0;
-//   border-width: 0 1px 1px 0;
-// }
-//
-// .league-card>:first-child:after {
-//   bottom: 0;
-//   left: 0;
-//   border-width: 0 0 1px 1px;
-// }
