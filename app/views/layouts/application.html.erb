@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>PronostkR &nbsp; | &nbsp; A fun forecasts platform on esports competitions</title>
     <%= render 'shared/favicon' %>
-
+  
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -13,24 +13,20 @@
   </head>
 
   <body>
-    <div class="main-container">
+    <%= render 'shared/navbar' %>
 
-      <%= render 'shared/navbar' %>
+    <div class="container background">
+      <%= render 'shared/flashes' %>
 
-      <div class="container background">
-        <%= render 'shared/flashes' %>
-
-        <%= yield %>
-
-      </div>
-
-      <%= javascript_include_tag 'application' %>
-      <%= javascript_pack_tag 'application' %>
-
-      <footer>
-        <%= render 'shared/footer' %>
-      </footer>
+      <%= yield %>
 
     </div>
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+
+    <footer>
+      <%= render 'shared/footer' %>
+    </footer>
   </body>
 </html>
