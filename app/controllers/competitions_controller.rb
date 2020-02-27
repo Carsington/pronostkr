@@ -5,6 +5,4 @@ class CompetitionsController < ApplicationController
     @competition = Competition.find(params[:id])
     @page_title = @competition.name
   end
-
-
 end
