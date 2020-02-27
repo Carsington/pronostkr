@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: $gray-600;
-  color: $gray-0;
+  background: $navbar-bg;
+  color: $navbar-txt;
 
   .navbar-brand {
 
@@ -10,7 +10,7 @@
     }
 
     h3 {
-      color: $codingame-yellow;
+      color: $golden-yellow;
       font-weight: bold;
       text-shadow: 0 0 10px $gray-999;
       margin: 0 15px;
