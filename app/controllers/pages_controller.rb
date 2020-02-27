@@ -14,6 +14,5 @@ class PagesController < ApplicationController
       @no_results = true
       @competitions = Competition.all
     end
-    # @competitions = Competition.all
   end
 end
