@@ -3,6 +3,20 @@
   background: $gray-600;
   color: $gray-0;
 
+  .navbar-brand {
+
+    img {
+      width: 40px;
+    }
+
+    h3 {
+      color: $codingame-yellow;
+      font-weight: bold;
+      text-shadow: 0 0 10px $gray-999;
+      margin: 0 15px;
+    }
+  }
+
   .navbar-nav {
     align-items: center;
   }
@@ -36,8 +50,4 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
 }
