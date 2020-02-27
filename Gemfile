@@ -19,6 +19,7 @@ gem 'webpacker'
 # Additional gems come here
 gem 'cloudinary', '~> 1.12.0'
 gem 'faker', groups: [:development, :test]
+gem 'rails_real_favicon', groups: [:development]
 
 group :development do
   gem 'web-console', '>= 3.3.0'
