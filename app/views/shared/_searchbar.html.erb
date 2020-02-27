@@ -1,9 +1,5 @@
 <div class="searchbar">
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
     <%= f.input_field :query, label: false, placeholder: 'Search competitions!', class: "search-input" %>
-    <!-- <%#= button_tag type: 'submit', class: "search-button" do %>Go!<%# end %> -->
   <% end %>
 </div>
-
-<br>
-
