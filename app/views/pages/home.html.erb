@@ -9,7 +9,16 @@
   <div class="col-12">
 
     ROBIN
+    <%= render 'shared/searchbar' %>
 
+    <% @competitions.each do |competition| %>
+      <div class="searchbar">
+      <%= image_tag "eddy_avatar.png", alt: "alttext", class: "result-image" %>
+        <div class="search-result">
+          <p><%= competition.game.full_name %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
