@@ -5,8 +5,11 @@ class Competition < ApplicationRecord
 
   include PgSearch::Model
 
-  pg_search_scope :search,
-    against: [ :game, :description ],
+  pg_search_scope :global_search,
+    against: [ :name ],
+    associated_against: {
+      game: [ :full_name, :acronym ]
+    },
     using: {
       tsearch: { prefix: true }
     }

@@ -1,59 +1,57 @@
-@mixin optional-at-root($sel) {
-  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
-    @content;
-  }
-}
-
-@mixin placeholder {
-  @include optional-at-root('::-webkit-input-placeholder') {
-    @content;
-  }
-
-  @include optional-at-root(':-moz-placeholder') {
-    @content;
-  }
-
-  @include optional-at-root('::-moz-placeholder') {
-    @content;
-  }
-
-  @include optional-at-root(':-ms-input-placeholder') {
-    @content;
-  }
-}
 
 .searchbar {
   display: flex;
   justify-content: center;
-}
-
-.search-input {
+  justify-content: space-between;
   max-width: 80%;
-  width: 500px;
+
   font-size: 22px;
   border-radius: 5px;
   border: none;
   height: 70px;
   line-height: 70px;
   background-color: $searchbar-bg;
-  color: $searchbar-text;
   transition: background-color 0.4s;
   padding-left: 10px;
   box-shadow: 5px 5px 5px black;
 
-  @include placeholder {
-    color: $searchbar-placeholder;
-  }
-
-  &:hover {
+    &:hover {
     background-color: $tier1-bg-hover;
     // border: solid 1px $searchbar-bg;
     transition: 0.3s;
   }
 }
 
+.search-input {
+
+  justify-content: space-between;
+  width: 100%;
+  font-size: 22px;
+  border: none;
+  height: 70px;
+  line-height: 70px;
+  background-color: transparent;
+  color: $searchbar-text;
+  padding-left: 10px;
+
+
+  &::placeholder {
+    color: $searchbar-placeholder;
+  }
+
+}
+
+.result-image {
+  position: relative;
+  border-radius: 5px;
+  width: 56px;
+}
+
 .search-result {
+  max-width: 80%;
+  width: 500px;
   display: flex;
+  align-items: center;
   font-size: 22px;
   border-radius: 5px;
   border: none;
@@ -64,17 +62,6 @@
   transition: background-color 0.4s;
   padding-left: 10px;
   box-shadow: 5px 5px 5px black;
-
-  @include placeholder {
-    color: $searchbar-placeholder;
-  }
-
-  .result-image {
-    position: relative;
-    border-radius: 5px;
-    max-width: 90%;
-    max-height: 90%;
-  }
 
   &:hover {
     background-color: $tier1-bg-hover;
