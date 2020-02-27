@@ -1,0 +1,76 @@
+.league-card {
+  background: $tier1-card-bg;
+  color: $tier1-txt;
+  width: 350px;
+  padding: 24px;
+
+  .league-title {
+    color: $golden-yellow;
+    // color: #a2770f;
+    margin-bottom: 0px;
+  }
+
+  .league-game {
+    // color: #287093;
+    margin-bottom: 8px;
+  }
+
+  .league-competition {
+    // color: #0891c5;
+    margin-bottom: 8px;
+  }
+
+  .league-competition-date {
+    // color: #0891c5;
+  }
+
+  .league-slug {
+    color: $golden-yellow;
+    // color: #a2770f;
+    margin-bottom: 0;
+  }
+
+  .league-members-count {
+    color: $discord-blue;
+    // color: #287093;
+    margin-bottom: 0;
+  }
+}
+
+.league-card:hover {
+  background: $tier1-card-bg-hover;
+  color: $tier1-txt-selected;
+}
+
+// .league-card:before, .league-card:after, .league-card>:first-child:before, .league-card>:first-child:after {
+//   position: absolute;
+//   width: 8px;
+//   width: 8px;
+//   border-color: $golden-yellow;
+//   border-style: solid;
+//   content: ' ';
+// }
+//
+// .league-card:before {
+//   top: 0;
+//   left: 0;
+//   border-width: 1px 0 0 1px;
+// }
+//
+// .league-card:after {
+//   top: 0;
+//   right: 0;
+//   border-width: 1px 1px 0 0;
+// }
+//
+// .league-card>:first-child:before {
+//   bottom: 0;
+//   right: 0;
+//   border-width: 0 1px 1px 0;
+// }
+//
+// .league-card>:first-child:after {
+//   bottom: 0;
+//   left: 0;
+//   border-width: 0 0 1px 1px;
+// }
