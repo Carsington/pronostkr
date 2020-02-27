@@ -1,0 +1,45 @@
+$radius-global: 2px;
+
+.join {
+	width: 232px;
+	box-shadow: 3px 3px 10px $gray-999;
+	border-radius: $radius-global
+}
+
+.join-league-button {
+	width: 38px;
+	background: $tier1-bg-selected;
+	color: $tier1-txt-selected;
+	border: none;
+	border-radius: 0 $radius-global $radius-global 0;
+	font-family: $mono-font;
+
+	&:hover {
+		background: $golden-yellow;
+		color: $searchbar-bg;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.input-slug {
+	flex: 1 1 auto;
+	background: $searchbar-bg;
+	color: $tier1-txt-selected;
+	border: none;
+	font-family: $mono-font;
+	font-size: 1.5rem;
+	letter-spacing: 6px;
+	text-transform: uppercase;
+
+	&::placeholder {
+		color: $searchbar-placeholder;
+		text-align: center;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
