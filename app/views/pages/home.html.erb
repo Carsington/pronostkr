@@ -9,7 +9,12 @@
   <div class="col-12">
 
     ROBIN
-
+    <%= render '/shared/searchbar' %>
+    <ul>
+    <% @competitions.each do |competition| %>
+      <li> <%= competition.game.full_name %> </li>
+    <% end %>
+    </ul>
   </div>
 </div>
 

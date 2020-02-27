@@ -1,0 +1,15 @@
+<div class="searchbar">
+  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <%= f.input_field :query, label: false, placeholder: 'Search competitions!', class: "search-input" %>
+    <!-- <%#= button_tag type: 'submit', class: "search-button" do %>Go!<%# end %> -->
+  <% end %>
+</div>
+
+<br>
+
+<div class="searchbar">
+  <div class="search-result">
+    <%= image_tag "eddy_avatar.png", alt: "alttext", class: "result-image" %>
+    <p>Here is your result</p>
+  </div>
+</div>

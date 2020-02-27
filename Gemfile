@@ -15,6 +15,7 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'pg_search'
 
 # Additional gems come here
 gem 'cloudinary', '~> 1.12.0'
