@@ -1,5 +1,8 @@
+.search-card-link:hover {
+  text-decoration: none;
+}
 
-.searchbar {
+.search-element {
   display: flex;
   align-items: center;
   max-width: 80%;
@@ -13,7 +16,7 @@
   transition: background-color 0.3s;
   padding-left: 10px;
   box-shadow: 5px 5px 5px black;
-  margin: 5px, auto;
+  // margin: 0px, auto;
 
     &:hover {
     background-color: $tier1-bg-hover;
