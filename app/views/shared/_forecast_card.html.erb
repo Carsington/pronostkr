@@ -1,12 +1,12 @@
 <div class="forecast-card d-flex justify-content-around align-items-center">
-  <div class="team-card team-a-card">
+  <div class="team-card">
     <p class="team-name"><%= match.teams[0].name %></p>
     <%= image_tag "teams/fnatic_logo.png", class: "team-logo team-a-logo" %>
   </div>
   <div class="versus-img">
     <%= image_tag versus_image_path %>
   </div>
-  <div class="team-card team-b-card">
+  <div class="team-card">
     <%= image_tag "teams/astralis_logo.png", class: "team-logo team-b-logo" %>
     <p class="team-name"><%= match.teams[1].name %></p>
   </div>
