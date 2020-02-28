@@ -1,12 +1,12 @@
 require 'faker'
 
-N_USERS = 10
-N_COMPETITIONS = 5
-N_TEAMS = 10
-N_PLAYERS = 50
-N_MATCHES = 30
+N_USERS = 50
+N_COMPETITIONS = 8
+N_TEAMS = 40
+N_PLAYERS = 200
+N_MATCHES = 300
 N_LEAGUES = 10
-N_FORCASTS = 100
+N_FORCASTS = 500
 
 puts "Destroying old instances..."
 
