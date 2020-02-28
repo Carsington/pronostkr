@@ -1,1 +1,14 @@
-// Specific CSS for your home-page
+.landing-page {
+	height: 80vh;
+	color: $gray-200;
+	font-size: 1.4rem;
+
+	a {
+		text-decoration: none;
+		color: $discord-blue;
+
+		&:hover {
+			color: $gray-100;
+		}
+	}
+}
