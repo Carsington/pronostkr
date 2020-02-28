@@ -1,0 +1,30 @@
+.form-button {
+	padding: 0.375rem 0.75rem;
+	background: $tier1-card-bg;
+	color: $tier1-txt-selected;
+	border: none;
+	border-radius: 2px;
+	font-family: $headers-font;
+
+	&:hover {
+		background: $tier1-card-bg-hover;
+		color: $golden-yellow;
+	}
+}
+
+.create-league-button {
+	background: $tier1-card-bg;
+	color: $tier1-txt;
+	border: none;
+	padding-top: 2px;
+	padding-bottom: 2px;
+
+	i {
+		margin: 0 1px;
+	}
+
+	&:hover {
+		background: $tier1-card-bg-hover;
+		color: $golden-yellow;
+	}
+}
