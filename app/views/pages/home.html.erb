@@ -1,22 +1,22 @@
 <div class="row">
   <div class="col-12">
-    
-    <h2>Barre de recherche</h2>
-    <%= render 'shared/searchbar' %>	
 
-    <% @competitions.each do |competition| %>	
-      <div class="searchbar">	
-      <%= image_tag "eddy_avatar.png", alt: "alttext", class: "result-image" %>	
-        <div class="search-result">	
-          <p><%= competition.game.full_name %></p>	
-        </div>	
-      </div>	
+    <h2>Barre de recherche</h2>
+    <%= render 'shared/searchbar' %>
+
+    <% @competitions.each do |competition| %>
+      <div class="searchbar">
+      <%= image_tag "eddy_avatar.png", alt: "alttext", class: "result-image" %>
+        <div class="search-result">
+          <p><%= competition.game.full_name %></p>
+        </div>
+      </div>
     <% end %>
-    
+
     <h2>Cloche notification</h2>
     <%= render 'shared/bell', suppl_class: 'bell-static' %>
     <%= render 'shared/bell', suppl_class: 'bell-ringing' %>
-    
+
     <h2>Bouton de validation de formulaire</h2>
     <%= render 'shared/button_submit', label: "valider" %>
 
@@ -28,3 +28,17 @@
 
   </div>
 </div>
+
+
+<!-- <div class="notification">
+  <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+  <div class="notification-content">
+    <p><small>14th January</small></p>
+    <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+  </div>
+
+  <div class="notification-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+</div> -->
