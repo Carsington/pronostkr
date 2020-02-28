@@ -1,5 +1,5 @@
 <div class="search-element">
-  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+  <%= simple_form_for :search, method: :get do |f| %>
     <%= f.input_field :query, label: false, placeholder: 'Search competitions!', class: "search-input" %>
   <% end %>
 </div>
