@@ -4,8 +4,10 @@
     <h2>Barre de recherche</h2>
     <%= render 'shared/searchbar' %>
 
-    <% @competitions.each do |competition| %>
-      <%= render 'shared/searchresult', competition: competition %>
+    <% if @query %>
+      <% @competitions.each do |competition| %>
+        <%= render 'shared/searchresult', competition: competition %>
+      <% end %>
     <% end %>
 
     <h2>Cloche notification</h2>
