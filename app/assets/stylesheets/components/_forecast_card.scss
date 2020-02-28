@@ -28,9 +28,11 @@
 
   &:hover {
     // background: $tier2-button;
-    background: $tier2-button;
+    background: $discord-green-2;
+    box-shadow: 0 0 8px $discord-green-2;
     border-radius: 6px;
     transition: 0.2s;
+    cursor: pointer;
   }
 }
 
@@ -57,4 +59,10 @@
 
 .countdown-timer {
   font-size: 18px;
+}
+
+.forecast-placed {
+  box-shadow: 0 0 8px $discord-green-2;
+  background-color: $discord-green-2;
+  border-radius: 6px;
 }

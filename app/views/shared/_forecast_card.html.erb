@@ -1,15 +1,19 @@
 <div class="forecast-card d-flex justify-content-around align-items-center">
-  <div class="team-card">
-    <p class="team-name"><%= match.teams[0].name %></p>
-    <%= image_tag "teams/fnatic_logo.png", class: "team-logo team-a-logo" %>
-  </div>
+  <%#= link_to forecasts_path, user_id: current_user.id, match_id: match.id, team_id: match.teams[0].id, method: :post do %>
+    <div class="team-card">
+      <p class="team-name"><%= match.teams[0].name %></p>
+      <%= image_tag "teams/fnatic_logo.png", class: "team-logo team-a-logo" %>
+    </div>
+  <%# end %>
   <div class="versus-img">
     <%= image_tag versus_image_path %>
   </div>
-  <div class="team-card">
-    <%= image_tag "teams/astralis_logo.png", class: "team-logo team-b-logo" %>
-    <p class="team-name"><%= match.teams[1].name %></p>
-  </div>
+  <%#= link_to forecasts_path, method: :post do %>
+    <div class="team-card">
+      <%= image_tag "teams/astralis_logo.png", class: "team-logo team-b-logo" %>
+      <p class="team-name"><%= match.teams[1].name %></p>
+    </div>
+  <%# end %>
   <div class="countdown-timer">
     <p>08:05:11</p>
   </div>

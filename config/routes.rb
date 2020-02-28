@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :users, only: [ :show, :edit ]
   resources :competitions, only: [ :show ]
   resources :leagues, only: [ :show, :new, :create ]
+  resources :forecasts, only: [ :create, :update ]
 end
