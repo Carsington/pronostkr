@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   get '/dashboard', to: 'users#dashboard', as: :dashboard_user
-  get '/hidden_components', to: 'pages#home', as: :hidden_components
+  get '/sandbox', to: 'pages#sandbox', as: :sandbox
 
   resources :users, only: [ :show, :edit ]
   resources :competitions, only: [ :show ]
