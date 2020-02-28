@@ -1,7 +1,6 @@
 
 .searchbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   max-width: 80%;
 
@@ -11,14 +10,15 @@
   height: 70px;
   line-height: 70px;
   background-color: $searchbar-bg;
-  transition: background-color 0.4s;
+  transition: background-color 0.3s;
   padding-left: 10px;
   box-shadow: 5px 5px 5px black;
+  margin: 10px, auto;
 
     &:hover {
     background-color: $tier1-bg-hover;
     // border: solid 1px $searchbar-bg;
-    transition: 0.3s;
+    transition: 0.25s;
   }
 }
 
@@ -40,10 +40,15 @@
   position: relative;
   border-radius: 5px;
   height: 80%;
+  box-shadow: 5px 5px 5px black;
 }
 
 .search-result {
-  max-width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 100%;
   width: 500px;
   display: flex;
   font-size: 22px;
@@ -53,12 +58,6 @@
   line-height: 70px;
   background-color: transparent;
   color: $searchbar-text;
-  transition: background-color 0.4s;
   padding-left: 10px;
-
-  &:hover {
-    background-color: $tier1-bg-hover;
-    // border: solid 1px $searchbar-bg;
-    transition: 0.3s;
-  }
+  overflow: hidden;
 }
