@@ -1,0 +1,8 @@
+<h2>Barre de recherche</h2>
+<%= render 'shared/searchbar' %>
+
+<% if @query %>
+  <% @competitions.each do |competition| %>
+    <%= render 'shared/searchresult', competition: competition %>
+  <% end %>
+<% end %>
