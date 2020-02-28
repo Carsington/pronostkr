@@ -22,7 +22,11 @@
   }
 
   .nav-link {
-    color: $gray-0 !important;
+    color: $navbar-link-txt !important;
+
+    &:hover {
+      color: $navbar-link-txt-hover !important;
+    }
   }
 
   .fa-circle {
