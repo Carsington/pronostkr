@@ -1,27 +1,50 @@
+$footer-height: 50px;
+
 .footer {
-  background: $navbar-bg;
-  color: $navbar-txt;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
+  height: $footer-height;
+  padding: 0 2rem;
+  background: $navbar-bg;
+  color: $navbar-txt;
 }
-.footer-links {
-  display: flex;
-  align-items: center;
-}
-.footer-links a {
-  color: $navbar-link-txt;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
 
-  &:hover {
-    color: $navbar-link-txt-hover;
+.footer-copyright p, .footer-phrase p{
+  margin: 0;
+  font-family: $headers-font;
+}
+
+.footer-copyright {
+  color: $navbar-link-txt;
+  
+  .fa-heart {
+    color: $discord-red;
   }
 }
 
-.footer .fa-heart {
-  color: #D23333;
+.footer-phrase a {
+  text-decoration: none;
+  color: $gray-600;
+
+  &:hover {
+    color: $gray-500;
+  }
 }
+
+.footer-links {
+  display: flex;
+  align-items: center;
+
+  a {
+    color: $navbar-link-txt;
+    text-decoration: none;
+    padding: 0 1rem;
+    font-size: 1.4rem;
+  }
+
+  a:hover {
+    color: $golden-yellow;
+  }
+}
+

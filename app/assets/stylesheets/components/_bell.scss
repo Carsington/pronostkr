@@ -1,0 +1,52 @@
+.bell {
+	display: flex;
+	justify-content: center;
+	font-size: 70px;
+
+	.ring-left, .ring-right {
+		visibility: hidden;
+	}
+}
+
+.bell-ringing {
+	animation: shake 0.5s;
+	animation-iteration-count: infinite;
+
+	.ring-left, .ring-right {
+		visibility: visible;
+	}
+}
+
+.ring-left {
+	transform: rotate(-90deg);
+	position: relative;
+}
+
+.bell-ring {
+	position: relative;
+	left: -0.55em;
+}
+
+.ring-right {
+	transform: rotate(90deg);
+	position: relative;
+	left: -1.10em;
+}
+
+.hidden-wings {
+	visibility: hidden;
+}
+
+@keyframes shake {
+	0% { transform: translate(1px, 1px) rotate(0deg); }
+	10% { transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { transform: translate(-1px, 0px) rotate(1deg); }
+	30% { transform: translate(1px, 2px) rotate(0deg); }
+	40% { transform: translate(1px, -1px) rotate(1deg); }
+	50% { transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { transform: translate(-0px, 1px) rotate(0deg); }
+	70% { transform: translate(1px, 1px) rotate(-1deg); }
+	80% { transform: translate(-1px, -1px) rotate(1deg); }
+	90% { transform: translate(1px, 2px) rotate(0deg); }
+	100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
