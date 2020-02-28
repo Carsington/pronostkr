@@ -25,6 +25,15 @@
 
     <h2>Carte d'ajout de ligue</h2>
     <%= render 'shared/card_join' %>
-
+    
+    <h2>Carte de ligue</h2>
+    <%= render "shared/league_card", league: League.last %>
+    
+    <h2>Cartes de match</h2>
+    <%= render "shared/forecast_card", match: Match.last, versus_image_path: "versus.png" %>
+    <%= render "shared/forecast_card", match: Match.last, versus_image_path: "versus2.png" %>
+    <%= render "shared/forecast_card", match: Match.last, versus_image_path: "white_bolt.png" %>
+    <%= render "shared/forecast_card", match: Match.last, versus_image_path: "white-swords.png" %>
+    
   </div>
 </div>

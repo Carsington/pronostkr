@@ -1,0 +1,34 @@
+.league-card {
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("https://pic.clubic.com/v1/images/1775169/raw?width=1200&fit=max&hash=73e51752cc8a9f17d18e110229fae45e2e28a9ba");
+  // background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("https://i.ytimg.com/vi/qKCTarAvuMQ/maxresdefault.jpg");
+  background-size: cover;
+  color: $tier1-txt;
+  width: 350px;
+  padding: 24px;
+
+  .league-title {
+    color: $golden-yellow;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+
+  .league-game, .league-competition {
+    margin-bottom: 8px;
+  }
+
+  .league-slug {
+    color: $golden-yellow;
+    margin-bottom: 0;
+  }
+
+  .league-members-count {
+    color: $discord-blue;
+    margin-bottom: 0;
+  }
+}
+
+.league-card:hover {
+  color: $tier1-txt-selected;
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("https://pic.clubic.com/v1/images/1775169/raw?width=1200&fit=max&hash=73e51752cc8a9f17d18e110229fae45e2e28a9ba");
+  // background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("https://i.ytimg.com/vi/qKCTarAvuMQ/maxresdefault.jpg");
+}

@@ -14,21 +14,9 @@
         <p><%= @competition.description %></p>
       </div>
 
-      <div class="matches">
+      <div class="forecasts-list">
         <% @competition.matches.each do |match| %>
-          <div class="card-match border border-secondary p-2 my-3">
-            <div class="card-forecast text-center d-flex align-items-center">
-              <div class="border w-75 mx-auto border-primary">
-                <h3><%= match.teams[0].name %></h3>
-                <p><%= match.teams[0].nationality %></p>
-              </div>
-              <p class="px-2">vs</p>
-              <div class="border w-75 mx-auto border-danger">
-                <h3><%= match.teams[1].name %></h3>
-                <p><%= match.teams[1].nationality %></p>
-              </div>
-            </div>
-          </div>
+          <%= render "shared/forecast_card", match: match, versus_image_path: "versus.png" %>
         <% end %>
       </div>
     </div>

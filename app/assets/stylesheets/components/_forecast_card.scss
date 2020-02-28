@@ -1,0 +1,60 @@
+.forecast-card {
+  // background: $tier2-bg;
+  background: $tier2-button-hover;
+  width: 700px;
+  border-radius: 4px;
+  padding: 16px 48px;
+  margin-bottom: 16px;
+  box-shadow: 0 0 4px $golden-yellow;
+
+  p {
+    margin-bottom: 0;
+    color: $gray-0;
+    font-weight: bold;
+  }
+}
+
+.fa-bolt {
+  color: $gray-0;
+  font-size: 24px;
+  transform: rotate(8deg);
+}
+
+.team-card {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  transition: 0.2s;
+
+  &:hover {
+    // background: $tier2-button;
+    background: $tier2-button;
+    border-radius: 6px;
+    transition: 0.2s;
+  }
+}
+
+.team-logo {
+  height: 40px;
+}
+
+.team-a-logo {
+  margin-left: 12px;
+}
+
+.team-b-logo {
+  margin-right: 12px;
+}
+
+.versus-img img {
+  height: 30px;
+}
+
+.versus-text {
+  color: $golden-yellow;
+  font-size: 20px;
+}
+
+.countdown-timer {
+  font-size: 18px;
+}
