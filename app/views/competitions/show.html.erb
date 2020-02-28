@@ -16,25 +16,7 @@
 
       <div class="forecasts-list">
         <% @competition.matches.each do |match| %>
-          <div class="forecast-card d-flex justify-content-around align-items-center">
-            <div class="team-card">
-              <p class="team-name"><%= match.teams[0].name %></p>
-              <%= image_tag "teams/fnatic_logo.png", class: "team-logo team-a-logo" %>
-            </div>
-            <div class="versus-img">
-              <%#= image_tag "versus.png" %>
-              <%#= image_tag "versus2.png" %>
-              <!-- <i class="fa fa-bolt"></i> -->
-              <%= image_tag "white-swords.png" %>
-            </div>
-            <div class="team-card">
-              <%= image_tag "teams/astralis_logo.png", class: "team-logo team-b-logo" %>
-              <p class="team-name"><%= match.teams[1].name %></p>
-            </div>
-            <div class="countdown-timer">
-              <p>08:05:11</p>
-            </div>
-          </div>
+          <%= render "shared/forecast_card", match: match, versus_image_path: "versus.png" %>
         <% end %>
       </div>
     </div>
