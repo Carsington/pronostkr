@@ -13,20 +13,20 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
 
-    <div class="container">
-      <%= render 'shared/flashes' %>
+    <div class="main-container">
+      <%= render 'shared/navbar' %>
 
-      <%= yield %>
+      <div class="container">
+        <%= render 'shared/flashes' %>
+        <%= yield %> <!-- Here comes the content -->
+      </div>
 
+      <footer><%= render 'shared/footer' %></footer>
+
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
     </div>
 
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-
-    <footer>
-      <%= render 'shared/footer' %>
-    </footer>
   </body>
 </html>
