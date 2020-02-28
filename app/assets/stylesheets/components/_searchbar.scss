@@ -1,8 +1,10 @@
+.search-card-link:hover {
+  text-decoration: none;
+}
 
-.searchbar {
+.search-element {
   display: flex;
-  justify-content: center;
-  justify-content: space-between;
+  align-items: center;
   max-width: 80%;
 
   font-size: 22px;
@@ -11,29 +13,25 @@
   height: 70px;
   line-height: 70px;
   background-color: $searchbar-bg;
-  transition: background-color 0.4s;
+  transition: background-color 0.3s;
   padding-left: 10px;
   box-shadow: 5px 5px 5px black;
+  // margin: 0px, auto;
 
     &:hover {
     background-color: $tier1-bg-hover;
     // border: solid 1px $searchbar-bg;
-    transition: 0.3s;
+    transition: 0.25s;
   }
 }
 
 .search-input {
 
-  justify-content: space-between;
   width: 100%;
-  font-size: 22px;
   border: none;
-  height: 70px;
-  line-height: 70px;
   background-color: transparent;
   color: $searchbar-text;
   padding-left: 10px;
-
 
   &::placeholder {
     color: $searchbar-placeholder;
@@ -44,28 +42,25 @@
 .result-image {
   position: relative;
   border-radius: 5px;
-  width: 56px;
+  height: 80%;
+  box-shadow: 5px 5px 5px black;
 }
 
 .search-result {
-  max-width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 100%;
   width: 500px;
   display: flex;
-  align-items: center;
   font-size: 22px;
   border-radius: 5px;
   border: none;
   height: 70px;
   line-height: 70px;
-  background-color: $searchbar-bg;
+  background-color: transparent;
   color: $searchbar-text;
-  transition: background-color 0.4s;
   padding-left: 10px;
-  box-shadow: 5px 5px 5px black;
-
-  &:hover {
-    background-color: $tier1-bg-hover;
-    // border: solid 1px $searchbar-bg;
-    transition: 0.3s;
-  }
+  overflow: hidden;
 }

@@ -2,15 +2,12 @@
   <div class="col-12">
     
     <h2>Barre de recherche</h2>
-    <%= render 'shared/searchbar' %>  
+    <%= render 'shared/searchbar' %>
 
-    <% @competitions.each do |competition| %> 
-      <div class="searchbar"> 
-      <%= image_tag "eddy_avatar.png", alt: "alttext", class: "result-image" %> 
-        <div class="search-result"> 
-          <p><%= competition.game.full_name %></p>  
-        </div>  
-      </div>  
+    <% if @query %>
+      <% @competitions.each do |competition| %>
+        <%= render 'shared/searchresult', competition: competition %>
+      <% end %>
     <% end %>
     
     <h2>Cloche notification</h2>
