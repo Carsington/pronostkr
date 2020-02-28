@@ -1,0 +1,11 @@
+<div class=" <%= competition %> ">
+  <%= link_to competition_path(competition), class:"card-link" do %>
+    <div class="searchbar">
+    <%= image_tag "eddy_avatar.png", alt: "alttext", class: "result-image" %>
+      <div class="search-result">
+        <div><h3><%= competition.name %></p></div>
+        <div><h5><%= competition.game.full_name %></p></div>
+      </div>
+    </div>
+  <% end %>
+</div>
