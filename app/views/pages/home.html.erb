@@ -1,47 +1,8 @@
 <div class="row">
   <div class="col-12">
-    <h1>Pages#home / Amusons-nous avec les composants</h1>
-    <p>Find me in app/views/pages/home.html.erb</p>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-12">
-
-    ROBIN
-    <%= render 'shared/searchbar' %>
-
-    <% @competitions.each do |competition| %>
-      <div class="searchbar">
-      <%= image_tag "eddy_avatar.png", alt: "alttext", class: "result-image" %>
-        <div class="search-result">
-          <p><%= competition.game.full_name %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-12">
-
-    MAXIME
-
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-12">
-
-    ALEX
-
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-12">
-
-    PILOU
+    <%= render 'shared/bell', suppl_class: 'bell-static' %>
+    <%= render 'shared/bell', suppl_class: 'bell-ringing' %>
 
   </div>
 </div>
