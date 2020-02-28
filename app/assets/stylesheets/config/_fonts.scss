@@ -1,9 +1,10 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Play:400,700|Roboto&display=swap&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Play:400,700|Roboto|Roboto+Mono&display=swap&subset=latin-ext");
 
 // Define fonts for body and headers
 $body-font: "Roboto", "Helvetica", "sans-serif";
 $headers-font: "Play", "Helvetica", "sans-serif";
+$mono-font: "Roboto Mono", "monospace";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

@@ -1,0 +1,16 @@
+.my-card {
+	width: 18rem;
+	background: $gray-200;
+
+	&:hover {
+		background: $gray-100;
+	}
+
+	h3 {
+		color: $gray-700;
+
+		&:hover {
+			color: $gray-800;
+		}
+	}
+}
