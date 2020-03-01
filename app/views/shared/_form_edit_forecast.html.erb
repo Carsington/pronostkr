@@ -1,0 +1,5 @@
+<%= simple_form_for :forecast, url: forecast, method: :patch do |f| %>
+  <%= f.input :team, collection: match.teams, selected: forecast.team.id %>
+  <%= f.hidden_field :match, value: match.id %>
+  <%= f.submit "Pronostiquer", class: "btn btn-primary btn-block" %>
+<% end %>

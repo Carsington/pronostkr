@@ -17,6 +17,13 @@
       <div class="forecasts-list">
         <% @competition.matches.each do |match| %>
           <%= render "shared/forecast_card", match: match, versus_image_path: "versus.png" %>
+
+          <% user_forecast = Forecast.find_by(user: current_user, match: match) %>
+          <% if user_forecast.nil? %>
+            <%= render 'shared/form_new_forecast', match: match %>
+          <% else %>
+            <%= render 'shared/form_edit_forecast', match: match, forecast: user_forecast %>
+          <% end %>
         <% end %>
       </div>
     </div>

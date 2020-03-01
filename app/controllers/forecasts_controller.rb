@@ -1,21 +1,30 @@
 class ForecastsController < ApplicationController
-  def new
-    @forecast = Forecast.new
-  end
+  before_action :forecast_values, only: [ :create, :update ]
 
   def create
-    @forecast = Forecast.new(forecast_params)
+    @forecast = current_user.forecasts.build(match: @values[:match], team: @values[:team])
 
-    # use find_or_initialize method
+    @forecast.save
+    # redirect_to @forecast.competition
+  end
 
-    if @forecast.save
-      redirect_to @forecast
-    end
+  def update
+    @forecast = Forecast.find_by(user: current_user, match: @values[:match])
+
+    @forecast.update(forecast_values)
+    # redirect_to @forecast.competition
   end
 
   private
 
   def forecast_params
-    params.require(:forecast).permit(:user_id, :team_id, :match_id)
+    params.require(:forecast).permit(:team, :match)
+  end
+
+  def forecast_values
+    @values = {
+      match: Match.find(params[:forecast][:match]),
+      team: Team.find(params[:forecast][:team])
+    }
   end
 end
