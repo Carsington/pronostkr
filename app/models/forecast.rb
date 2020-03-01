@@ -5,6 +5,6 @@ class Forecast < ApplicationRecord
 
   validates :user, :match, :team, presence: true
   # validates that the team chosen belongs to the match
-  validates :match, uniqueness: { scope: :user }
+  validates :match, uniqueness: { scope: :user, message: "can be forecast once per user" }
 
 end
