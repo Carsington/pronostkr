@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :leagues, through: :user_leagues
   has_many :forecasts, dependent: :destroy
 
+  validates username:, presence: true, uniqueness: { case_sensitive: false }
+
   private
 
   def attach_default_image
