@@ -9,11 +9,12 @@
     <% end %>
     <br>
 
-    
+        <ul id="league-card">
     <% @user.leagues.each do |league| %>
-        <%= render 'shared/league_card', league: league %>
+        <li><%= render 'shared/league_card', league: league %></li>
         <br>
     <% end %>
+    </ul>
 
     <br>
     <%= render 'shared/card_create' %>
