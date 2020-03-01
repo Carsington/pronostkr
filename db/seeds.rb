@@ -1,12 +1,12 @@
 require 'faker'
 
-N_USERS = 50
-N_COMPETITIONS = 8
-N_TEAMS = 40
-N_PLAYERS = 200
-N_MATCHES = 300
-N_LEAGUES = 10
-N_FORCASTS = 500
+N_USERS = 20
+N_COMPETITIONS = 25
+N_TEAMS = 150
+N_PLAYERS = 800
+N_MATCHES = 2000
+N_LEAGUES = 4
+N_FORCASTS = 200
 
 puts "Destroying old instances..."
 
@@ -20,6 +20,13 @@ Game.destroy_all
 
 
 puts "Creating new instances..."
+
+# toto
+User.create!(
+    email: "toto@toto.toto",
+    username: "toto",
+    password: "cocorico"
+  )
 
 # USERS
 N_USERS.times do
@@ -108,9 +115,9 @@ puts "Built #{League.count} League instances!"
 
 # USER_LEAGUES
 League.all.each do |league|
-  rand(10).times do
-    user = User.all.sample
+  users = User.all.sample(10)
 
+  users.each do |user|
     UserLeague.create!(
       user: user,
       league: league,
