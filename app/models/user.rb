@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :leagues, through: :user_leagues
   has_many :forecasts, dependent: :destroy
 
-  validates username:, presence: true, uniqueness: { case_sensitive: false }
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
 
   private
 
