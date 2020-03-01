@@ -3,16 +3,22 @@ class ForecastsController < ApplicationController
 
   def create
     @forecast = current_user.forecasts.build(match: @values[:match], team: @values[:team])
-
     @forecast.save
-    # redirect_to @forecast.competition
+
+    respond_to do |format|
+      format.html { render 'competitions/show', locals: { competition: @forecast.competition } }
+      # format.js
+    end
   end
 
   def update
     @forecast = Forecast.find_by(user: current_user, match: @values[:match])
-
     @forecast.update(forecast_values)
-    # redirect_to @forecast.competition
+
+    respond_to do |format|
+      format.html { render 'competitions/show', locals: { competition: @forecast.competition } }
+      # format.js
+    end
   end
 
   private
