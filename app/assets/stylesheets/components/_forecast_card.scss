@@ -73,8 +73,14 @@
   font-size: 18px;
 }
 
-.forecast-placed {
-  box-shadow: 0 0 8px $discord-green-2;
-  background-color: $discord-green-2;
+.winning-team {
+  box-shadow: 0 0 8px $discord-green;
+  background-color: $discord-green;
+  border-radius: 6px;
+}
+
+.losing-team {
+  box-shadow: 0 0 8px $discord-red;
+  background-color: $discord-red;
   border-radius: 6px;
 }

@@ -1,0 +1,5 @@
+<%= simple_form_for :forecast, url: forecasts_path, method: :post, remote: true do |f| %>
+  <%= f.input :team, collection: match.teams, include_blank: true %>
+  <%= f.hidden_field :match, value: match.id %>
+  <%= f.submit "Pronostiquer", class: "btn btn-primary btn-block" %>
+<% end %>
