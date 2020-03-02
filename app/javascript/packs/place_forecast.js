@@ -1,3 +1,5 @@
+import Rails from 'rails-ujs';
+
 const toggleWinner = (teamOne, teamTwo, match) => {
   teamOne.addEventListener("click", (event) => {
     teamOne.classList.toggle("winning-team");
@@ -22,8 +24,8 @@ const updateForecast = match => {
   } else {
     input.value = "";
   }
-  
-  // form.submit();
+
+  Rails.fire(form, 'submit')
 }
 
 const addTeamToggles = match => {

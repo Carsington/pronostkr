@@ -1,15 +1,7 @@
-<% user_forecast = Forecast.find_by(user: current_user, match: match) %>
-<% url = user_forecast ? user_forecast : forecasts_path %>
-<% method = user_forecast ? :patch : :post %>
-<% team = user_forecast ? user_forecast.team.id : :blank %>
-
 <div class="forecast-card d-flex justify-content-around align-items-center">
-  <%= simple_form_for :forecast, url: url, method: method, remote: true do |f| %>
-    <%= f.input :match, input_html: {value: match.id} %>
-    <%= f.input :team %>
-  <% end %>
+  <%= render 'forecasts/form', match: match %>
 
-  <div class="team-card" id="team-a" data-team-id="<%= match.teams[0].id %>">
+  <div class="team-card <%= %> " id="team-a" data-team-id="<%= match.teams[0].id %>">
     <p class="team-name"><%= match.teams[0].name %></p>
     <%= image_tag "teams/fnatic_logo.png", class: "team-logo team-a-logo" %>
   </div>
