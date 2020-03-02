@@ -21,6 +21,7 @@
 }
 
 .team-card {
+  flex: 3;
   display: flex;
   align-items: center;
   padding: 8px;
@@ -36,6 +37,10 @@
   }
 }
 
+.team-a-card {
+  justify-content: flex-end;
+}
+
 .team-logo {
   height: 40px;
 }
@@ -48,8 +53,13 @@
   margin-right: 12px;
 }
 
-.versus-img img {
-  height: 30px;
+.versus-img {
+  flex: 1;
+  text-align: center;
+
+  img {
+    height: 30px;
+  }
 }
 
 .versus-text {
@@ -58,6 +68,8 @@
 }
 
 .countdown-timer {
+  flex: 2;
+  text-align: center;
   font-size: 18px;
 }
 
