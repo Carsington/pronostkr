@@ -37,6 +37,10 @@
   color: $searchbar-text;
   padding-left: 10px;
   outline: none;
+  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+  -webkit-transition-delay: 9999s;
+  transition: color 9999s ease-out, background-color 9999s ease-out;
+  transition-delay: 9999s;
 
   &::placeholder {
     color: $searchbar-placeholder;
