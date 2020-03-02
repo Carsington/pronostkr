@@ -3,30 +3,28 @@
 <% method = user_forecast ? :patch : :post %>
 <% team = user_forecast ? user_forecast.team.id : :blank %>
 
-<%= simple_form_for :forecast, url: url, method: method, remote: true do |f| %>
-  <%= f.hidden_field :match, value: match.id %>
+<div class="forecast-card d-flex justify-content-around align-items-center">
+  <%= simple_form_for :forecast, url: url, method: method, remote: true do |f| %>
+    <%= f.input :match, input_html: {value: match.id} %>
+    <%= f.input :team %>
+  <% end %>
 
-  <div class="forecast-card d-flex justify-content-around align-items-center">
-    <%#= link_to forecasts_path, user_id: current_user.id, match_id: match.id, team_id: match.teams[0].id, method: :post do %>
-      <div class="team-card" id="team-a">
-        <p class="team-name"><%= match.teams[0].name %></p>
-        <%= image_tag "teams/fnatic_logo.png", class: "team-logo team-a-logo" %>
-      </div>
-    <%# end %>
-    <div class="versus-img">
-      vs
-    </div>
-    <%#= link_to forecasts_path, method: :post do %>
-      <div class="team-card" id="team-b">
-        <%= image_tag "teams/astralis_logo.png", class: "team-logo team-b-logo" %>
-        <p class="team-name"><%= match.teams[1].name %></p>
-      </div>
-    <%# end %>
-    <div class="countdown-timer">
-      <p>08:05:11</p>
-    </div>
+  <div class="team-card" id="team-a" data-team-id="<%= match.teams[0].id %>">
+    <p class="team-name"><%= match.teams[0].name %></p>
+    <%= image_tag "teams/fnatic_logo.png", class: "team-logo team-a-logo" %>
   </div>
 
-  <%= f.input :team, collection: match.teams, include_blank: true, selected: team %>
-  <%= f.submit "Pronostiquer", class: "btn btn-primary btn-block" %>
-<% end %>
+  <div class="versus-img">
+    vs
+  </div>
+
+  <div class="team-card" id="team-b" data-team-id="<%= match.teams[1].id %>">
+    <%= image_tag "teams/astralis_logo.png", class: "team-logo team-b-logo" %>
+    <p class="team-name"><%= match.teams[1].name %></p>
+  </div>
+
+  <div class="countdown-timer">
+    <p>08:05:11</p>
+  </div>
+
+</div>
