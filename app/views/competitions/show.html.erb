@@ -47,7 +47,9 @@
     </div>
 
     <div class="border border-secondary text-center">
-      <%= link_to "Rejoindre la ligue générale" %>
+      <%= link_to league_path, class: "card-link" do %>
+        <%= render 'shared/card_join_general' %>
+      <% end %>
     </div>
 
     <% competition.leagues.each do |league| %>
