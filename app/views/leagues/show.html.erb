@@ -1,26 +1,14 @@
 <div class="row my-pronos">
-  <div class="col-6">
+  <div class="col-8">
     <div class="matches">
       <h1>Mes pronos</h1>
       <% @league.competition.matches.each do |match| %>
-      <div class="card-match border border-secondary p-2 my-3">
-        <div class="card-forecast text-center d-flex align-items-center">
-          <div class="border w-75 mx-auto border-primary">
-            <h3><%= match.teams[0].name %></h3>
-            <p><%= match.teams[0].nationality %></p>
-          </div>
-          <p class="px-2">vs</p>
-          <div class="border w-75 mx-auto border-danger">
-            <h3><%= match.teams[1].name %></h3>
-            <p><%= match.teams[1].nationality %></p>
-          </div>
-        </div>
-      </div>
+        <%= render "shared/forecast_card", match: match, versus_image_path: "versus.png" %>
       <% end %>
     </div>
   </div>
-  <div class="col-6">
 
+  <div class="col-4">
     <div class="classement">
       <h1>Classement</h1>
       <div class="card-match border border-secondary p-2 my-3">
@@ -35,4 +23,3 @@
 
   </div>
 </div>
-
