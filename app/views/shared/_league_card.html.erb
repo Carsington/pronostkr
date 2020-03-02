@@ -11,7 +11,7 @@
     <div class="d-flex justify-content-between">
       <p class="league-slug">
         <i class="fas fa-hashtag"></i>
-        <%= league.slug %>
+        <%= league.slug || 'K2000' %>
       </p>
       <p class="league-members-count">
         <%= league.users.count %>
