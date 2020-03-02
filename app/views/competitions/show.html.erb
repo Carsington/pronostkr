@@ -8,8 +8,8 @@
       <div class="competition-infos">
         <p><%= @competition.location %></p>
         <div class="start-end-dates">
-          <p>Début : <%= @competition.start_date %></p>
-          <p>Fin : <%= @competition.end_date %></p>
+          <p>Début : <%= @competition.start_date.strftime('%d-%m-%Y - %H:%M:%S') %></p>
+          <p>Fin : <%= @competition.end_date.strftime('%d-%m-%Y - %H:%M:%S') %></p>
         </div>
         <p><%= @competition.description %></p>
       </div>
