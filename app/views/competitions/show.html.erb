@@ -1,22 +1,30 @@
   <div class="row competition-page">
     <div class="col-9">
       <div class="competition-header">
-        <h1><%= @competition.name %></h1>
-        <h3><%= @competition.game.full_name %></h3>
+        <h3><%= competition.game.full_name %></h3>
       </div>
 
       <div class="competition-infos">
-        <p><%= @competition.location %></p>
+        <p><%= competition.location %></p>
         <div class="start-end-dates">
-          <p>Début : <%= @competition.start_date %></p>
-          <p>Fin : <%= @competition.end_date %></p>
+          <p>Début : <%= competition.start_date %></p>
+          <p>Fin : <%= competition.end_date %></p>
         </div>
-        <p><%= @competition.description %></p>
+        <p><%= competition.description %></p>
       </div>
 
       <div class="forecasts-list">
-        <% @competition.matches.each do |match| %>
-          <%= render "shared/forecast_card", match: match, versus_image_path: "versus.png" %>
+        <% competition.matches.each do |match| %>
+          <%#= render "forecasts/forecast_card", match: match, versus_image_path: "versus.png" %>
+
+          <%# user_forecast = Forecast.find_by(user: current_user, match: match) %>
+          <%# if user_forecast.nil? %>
+            <%#= render 'forecasts/form_new_forecast', match: match %>
+          <%# else %>
+            <%#= render 'forecasts/form_edit_forecast', match: match, forecast: user_forecast %>
+          <%# end %>
+
+          <%= render 'forecasts/form_forecast', match: match %>
         <% end %>
       </div>
 
@@ -40,7 +48,8 @@
       <div class="border border-secondary text-center">
         <%= link_to "Rejoindre la ligue générale" %>
       </div>
-      <% @competition.leagues.each do |league| %>
+      
+      <% competition.leagues.each do |league| %>
         <!-- <div class="border border-secondary text-center"> -->
           <%= render 'shared/league_card', league: league %>
         <!-- </div> -->
