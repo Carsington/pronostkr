@@ -1,0 +1,14 @@
+#league-card li {
+  cursor: grab;
+  list-style: none;
+}
+
+#league-card li:active {
+  cursor: grabbing;
+}
+
+#league-card li.ghost {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+

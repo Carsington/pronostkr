@@ -9,10 +9,12 @@
     <% end %>
     <br>
 
-    <% @user.leagues.each do |league| %>
-        <%= render 'shared/league_card', league: league %>
+    <ul id="league-card">
+      <% @user.leagues.each do |league| %>
+        <li><%= render 'shared/league_card', league: league %></li>
         <br>
-    <% end %>
+      <% end %>
+    </ul>
 
     <br>
     <%= link_to new_league_path, class: "card-link" do %>
