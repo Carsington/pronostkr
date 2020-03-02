@@ -1,30 +1,51 @@
-<div class="row competition-page">
-  <div class="col-9">
-    <div class="competition-header">
-      <h3><%= competition.game.full_name %></h3>
-    </div>
-
-    <div class="competition-infos">
-      <p><%= competition.location %></p>
-      <div class="start-end-dates">
-        <p>Début : <%= competition.start_date.strftime('%d-%m-%Y - %H:%M:%S') %></p>
-        <p>Fin : <%= competition.end_date.strftime('%d-%m-%Y - %H:%M:%S') %></p>
+<div class="row competition-banner">
+  <div class="banner-head d-flex">
+    <div class="status-name d-flex">
+      <div class="competition-status d-flex">
+        <i class="fas fa-circle"></i>
+        <span>ONGOING</span>
       </div>
-      <p><%= competition.description %></p>
+      <h2><%= competition.name %></h2>
     </div>
+    <%= image_tag("games/cs-go-logo.png", class: "game-logo") %>
+  </div>
+  <h5><%= competition.game.full_name %></h5>
+  <table class="competition-infos">
+    <tbody>
+      <tr>
+        <td class="infos-item first-item">
+          <p>Date</p>
+          <p><%= competition.start_date.strftime('%d.%m.%Y') %> - <%= competition.end_date.strftime('%d.%m.%Y') %></p>
+        </td>
+        <td class="infos-item">
+          <p>Location</p>
+          <p><%= competition.location %></p>
+        </td>
+        <td class="infos-item">
+          <p>Event</p>
+          <p>www.eddy-malou@ovanium.rdc</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
+  <p><%= competition.description %></p>
+</div>
+
+<div class="row competition-content">
+  <div class="col-9">
     <div class="forecasts-list">
       <% competition.matches.each do |match| %>
-        <%#= render "forecasts/forecast_card", match: match, versus_image_path: "versus.png" %>
+      <%#= render "forecasts/forecast_card", match: match, versus_image_path: "versus.png" %>
 
-        <%# user_forecast = Forecast.find_by(user: current_user, match: match) %>
-        <%# if user_forecast.nil? %>
-          <%#= render 'forecasts/form_new_forecast', match: match %>
-        <%# else %>
-          <%#= render 'forecasts/form_edit_forecast', match: match, forecast: user_forecast %>
-        <%# end %>
+      <%# user_forecast = Forecast.find_by(user: current_user, match: match) %>
+      <%# if user_forecast.nil? %>
+      <%#= render 'forecasts/form_new_forecast', match: match %>
+      <%# else %>
+      <%#= render 'forecasts/form_edit_forecast', match: match, forecast: user_forecast %>
+      <%# end %>
 
-        <%= render 'forecasts/form_forecast', match: match %>
+      <%= render 'forecasts/form_forecast', match: match %>
       <% end %>
     </div>
 
