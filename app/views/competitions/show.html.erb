@@ -33,7 +33,6 @@
 
     <div class="col-3">
       <div class="border border-secondary text-center">
-        <%#= link_to "Créer une ligue", new_league_path %>
         <%= link_to new_league_path, class: "card-link" do %>
           <%= render 'shared/card_create' %>
         <% end %>
@@ -43,7 +42,6 @@
       </div>
       <% @competition.leagues.each do |league| %>
         <!-- <div class="border border-secondary text-center"> -->
-          <%#= link_to league.name, league_path(league) %>
           <%= render 'shared/league_card', league: league %>
         <!-- </div> -->
       <% end %>
