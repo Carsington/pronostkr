@@ -14,22 +14,22 @@
     <tbody>
       <tr>
         <td class="infos-item first-item">
-          <p>Date</p>
-          <p><%= competition.start_date.strftime('%d.%m.%Y') %> - <%= competition.end_date.strftime('%d.%m.%Y') %></p>
+          <p class="item-head">Début</p>
+          <p class="item-content"><%= competition.start_date.strftime('%d.%m.%Y') %></p>
         </td>
-        <td class="infos-item">
-          <p>Location</p>
-          <p><%= competition.location %></p>
+        <td class="infos-item second-item">
+          <p class="item-head">Organisateur</p>
+          <p class="item-content">www.eddy-malou@ovanium.rdc</p>
         </td>
-        <td class="infos-item">
-          <p>Event</p>
-          <p>www.eddy-malou@ovanium.rdc</p>
+        <td class="infos-item third-item">
+          <p class="item-head">Matchs</p>
+          <p class="item-content"><%= competition.matches.count %></p>
         </td>
       </tr>
     </tbody>
   </table>
 
-  <p><%= competition.description %></p>
+  <p><%#= competition.description %></p>
 </div>
 
 <div class="row competition-content">

@@ -5,7 +5,7 @@
   background-position: top;
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: 0 0 150px 0;
   padding: 8px 16px;
   color: $tier2-button-txt-hover;
 }
@@ -13,12 +13,18 @@
 .banner-head {
   align-items: center;
   justify-content: space-between;
+
+  h2 {
+    margin-bottom: 0;
+    font-weight: bold;
+  }
 }
 
 .competition-status {
   align-items: baseline;
   border: 2px solid $discord-green;
-  padding: 8px;
+  // padding: 8px;
+  padding: 8px 8px 4px 8px;
   margin-right: 8px;
 
   .fa-circle {
@@ -38,18 +44,32 @@
 
 .competition-infos {
   display: flex;
-  margin: 16px 0;
+  margin: 24px 0;
 
   p {
     margin-bottom: 0;
   }
 }
 
-.infos-item {
+.first-item {
+  padding-right: 16px;
+  border-right: 1px solid $searchbar-placeholder;
+}
+
+.second-item {
   padding: 0 16px;
   border-right: 1px solid $searchbar-placeholder;
 }
 
-.first-item {
-  padding-left: 0;
+.third-item {
+  padding-left: 16px;
+}
+
+.item-head {
+  font-size: 14px;
+}
+
+.item-content {
+  font-weight: bold;
+  font-size: 18px;
 }
