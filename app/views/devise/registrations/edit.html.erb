@@ -1,46 +1,48 @@
-<div class="row justify-content-center mt-4">
+<div class="container">
+  <div class="row justify-content-center mt-4">
 
-  <div class="card m-5 w-25">
-    <h4 class="card-header text-center">Modifier ton profil</h4>
+    <div class="card m-5 w-25">
+      <h4 class="card-header text-center">Modifier ton profil</h4>
 
-    <div class="card-body">
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <div class="card-body">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
         <%= f.error_notification %>
 
         <%= f.input :email, required: true, autofocus: true %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
 
         <%= f.input :password,
-          required: false,
-          input_html: { autocomplete: "new-password" },
-          label: "Changer mot de passe:" %>
+        required: false,
+        input_html: { autocomplete: "new-password" },
+        label: "Changer mot de passe:" %>
         <%= f.input :password_confirmation,
-          required: false,
-          input_html: { autocomplete: "new-password" },
-          label: "Confirmer le changement de mot de passe:" %>
+        required: false,
+        input_html: { autocomplete: "new-password" },
+        label: "Confirmer le changement de mot de passe:" %>
         <%= f.input :current_password,
-          required: true,
-          input_html: { autocomplete: "current-password" },
-          label: "Mot de passe actuel:" %>
+        required: true,
+        input_html: { autocomplete: "current-password" },
+        label: "Mot de passe actuel:" %>
         <%= f.input :photo, as: :file,
         label: "Changer la photo de profile:" %>
 
         <%= f.button :submit, "Mettre à jour", class: "btn btn-primary btn-block" %>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
 
-    <h4 class="card-header text-center">Danger zone</h4>
+      <h4 class="card-header text-center">Danger zone</h4>
 
-    <div class="card-body">
-      <%= link_to "Supprimer mon compte",
+      <div class="card-body">
+        <%= link_to "Supprimer mon compte",
         registration_path(resource_name),
         data: { confirm: "T'es sur de vouloir nous quitter? :(" },
         method: :delete, class: "btn btn-danger btn-block" %>
+      </div>
     </div>
-  </div>
 
+  </div>
 </div>

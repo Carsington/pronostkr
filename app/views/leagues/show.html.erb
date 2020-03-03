@@ -1,12 +1,14 @@
-<div class="row my-pronos">
-  <div class="col-8">
-    <div class="matches">
-      <h1>Mes pronos</h1>
-      <% @league.competition.matches.each do |match| %>
+<div class="container">
+  <div class="row my-pronos mt-3">
+    <div class="col-8">
+      <div class="matches">
+        <h1 class="mb-4">Mes pronos</h1>
+        <% @league.competition.matches.each do |match| %>
         <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
+
 
   <div class="col-4">
     <div class="classement">
@@ -14,9 +16,9 @@
       <div class="card-match border border-secondary p-2 my-3">
         <p>4: <%= User.last.username %></p>
       </div>
+
+      <%= link_to @league.competition.name, @league.competition, class: "btn btn-outline-warning" %>
+
     </div>
-
-    <%= link_to @league.competition.name, @league.competition, class: "btn btn-outline-warning" %>
-
   </div>
 </div>

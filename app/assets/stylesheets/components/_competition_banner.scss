@@ -1,12 +1,15 @@
-.competition-banner {
+.competition-banner-img {
   // background-image: url("https://steamcdn-a.akamaihd.net/steam/subs/54029/header_586x192.jpg?t=1544227353");
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("https://pic.clubic.com/v1/images/1775169/raw?width=1200&fit=max&hash=73e51752cc8a9f17d18e110229fae45e2e28a9ba");
   background-size: cover;
   background-position: top;
+}
+
+.competition-banner {
   display: flex;
   flex-direction: column;
   margin: 0 0 50px 0;
-  padding: 8px 16px;
+  padding: 8px 0px;
   color: $gray-100;
 }
 
@@ -22,13 +25,13 @@
 
 .competition-status {
   align-items: baseline;
-  border: 2px solid $discord-green;
-  // padding: 8px;
+  border: 2px solid $discord-red;
   padding: 8px 8px 4px 8px;
   margin-right: 8px;
 
   .fa-circle {
-    color: $discord-green;
+    color: $discord-red;
+    font-size: 14px;
     margin-right: 4px;
   }
 
@@ -52,21 +55,22 @@
 }
 
 .first-item {
-  padding-right: 16px;
+  padding-right: 20px;
   border-right: 1px solid $gray-400;
 }
 
 .second-item {
-  padding: 0 16px;
+  padding: 0 20px;
   border-right: 1px solid $gray-400;
 }
 
 .third-item {
-  padding-left: 16px;
+  padding-left: 20px;
 }
 
 .item-head {
   font-size: 14px;
+  color: $gray-300;
 }
 
 .item-content {

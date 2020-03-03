@@ -72,12 +72,12 @@
   font-size: 18px;
   justify-content: center;
 
-  .status-green {
-    color: $discord-green !important;
+  .status-ongoing {
+    color: $discord-red !important;
   }
 
-  .status-red {
-    color: $discord-red !important;
+  .status-finished {
+    color: $gray-400 !important;
   }
 }
 
