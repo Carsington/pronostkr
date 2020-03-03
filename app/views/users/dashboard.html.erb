@@ -1,29 +1,31 @@
-<div class="row justify-content-center mt-4">
-  <div class="col-12">
+<div class="container">
+  <div class="row justify-content-center mt-4">
+    <div class="col-12">
 
-    <%= render 'shared/searchbar' %>
-    <% if @query && !@no_results %>
-      <% @competitions.each do |competition| %>
-        <%= render 'shared/searchresult', competition: competition %>
+      <%= render 'shared/searchbar' %>
+      <% if @query && !@no_results %>
+        <% @competitions.each do |competition| %>
+          <%= render 'shared/searchresult', competition: competition %>
+        <% end %>
       <% end %>
-    <% end %>
-    <br>
+      <br>
 
-    <ul id="league-card">
-      <% @user.leagues.each do |league| %>
-        <li><%= render 'shared/league_card', league: league %></li>
-        <br>
+      <ul id="league-card">
+        <% @user.leagues.each do |league| %>
+          <li><%= render 'shared/league_card', league: league %></li>
+          <br>
+        <% end %>
+      </ul>
+
+      <br>
+      <%= link_to new_league_path, class: "card-link" do %>
+        <%= render 'shared/card_create' %>
       <% end %>
-    </ul>
+      <br>
+      <%= render 'shared/card_join' %>
+      <br>
+      <br>
 
-    <br>
-    <%= link_to new_league_path, class: "card-link" do %>
-      <%= render 'shared/card_create' %>
-    <% end %>
-    <br>
-    <%= render 'shared/card_join' %>
-    <br>
-    <br>
-
+    </div>
   </div>
 </div>
