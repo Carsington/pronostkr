@@ -7,7 +7,7 @@
   flex-direction: column;
   margin: 0 0 150px 0;
   padding: 8px 16px;
-  color: $tier2-button-txt-hover;
+  color: $gray-100;
 }
 
 .banner-head {
@@ -53,12 +53,12 @@
 
 .first-item {
   padding-right: 16px;
-  border-right: 1px solid $searchbar-placeholder;
+  border-right: 1px solid $gray-400;
 }
 
 .second-item {
   padding: 0 16px;
-  border-right: 1px solid $searchbar-placeholder;
+  border-right: 1px solid $gray-400;
 }
 
 .third-item {
