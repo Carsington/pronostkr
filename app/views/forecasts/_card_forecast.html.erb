@@ -15,8 +15,7 @@
     <p class="team-name"><%= match.teams[1].name %></p>
   </div>
 
-  <div class="countdown-timer">
-    <p>08:05:11</p>
+  <div class="match-status d-flex">
+    <%= render 'forecasts/match_status', match: match %>
   </div>
-
 </div>

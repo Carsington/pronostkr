@@ -1,7 +1,7 @@
 .forecast-card {
   // background: $tier2-bg;
   background: $tier2-button-hover;
-  width: 700px;
+  width: 800px;
   border-radius: 4px;
   padding: 16px 48px;
   margin-bottom: 16px;
@@ -11,6 +11,10 @@
     margin-bottom: 0;
     color: $gray-0;
     font-weight: bold;
+  }
+
+  .fa-circle {
+    font-size: 12px;
   }
 }
 
@@ -37,7 +41,7 @@
   }
 }
 
-.team-a-card {
+#team-a {
   justify-content: flex-end;
 }
 
@@ -62,15 +66,19 @@
   }
 }
 
-.versus-text {
-  color: $golden-yellow;
-  font-size: 20px;
-}
-
-.countdown-timer {
+.match-status {
   flex: 2;
   text-align: center;
   font-size: 18px;
+  justify-content: center;
+
+  .status-green {
+    color: $discord-green !important;
+  }
+
+  .status-red {
+    color: $discord-red !important;
+  }
 }
 
 .winning-team {
