@@ -1,7 +1,7 @@
 .forecast-card {
   // background: $tier2-bg;
   background: $tier2-button-hover;
-  width: 700px;
+  width: 800px;
   border-radius: 4px;
   padding: 16px 48px;
   margin-bottom: 16px;
@@ -66,18 +66,19 @@
   }
 }
 
-.status-green {
-  color: $discord-green !important;
-}
-
-.status-red {
-  color: $discord-red !important;
-}
-
 .match-status {
   flex: 2;
   text-align: center;
   font-size: 18px;
+  justify-content: center;
+
+  .status-green {
+    color: $discord-green !important;
+  }
+
+  .status-red {
+    color: $discord-red !important;
+  }
 }
 
 .winning-team {
