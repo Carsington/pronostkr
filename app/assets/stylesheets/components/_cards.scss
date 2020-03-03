@@ -1,18 +1,44 @@
 .my-card {
 	width: 18rem;
-	background: $gray-200;
+	background-image: linear-gradient(to bottom right, black 60%, rgba(255,184,2,0.8) 100%), url('https://dnlzsmybcpo0z.cloudfront.net/games/images/1461010286_Video_Game_Controllers_Click');
+  background-size: cover;
+  transition: text-shadow 0.25s;
+  z-index: 1;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top left, black 60%, rgba(255,184,2,0.8) 100%), url('https://dnlzsmybcpo0z.cloudfront.net/games/images/1461010286_Video_Game_Controllers_Click');
+    width: 18rem;
+    background-size: cover;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s ease-in-out;
+  }
 
 	&:hover {
-		background: $gray-100;
-	}
+    // background-image: linear-gradient(to bottom right, rgba(255,184,2,0.8) 100%, black 60%), url('https://dnlzsmybcpo0z.cloudfront.net/games/images/1461010286_Video_Game_Controllers_Click');
+    text-shadow: 0px 0px 15px $golden-yellow, 0px 0px 15px $golden-yellow;
+    transition: text-shadow 0.25s;
+
+    &:before {
+      opacity: 1;
+      transition: opacity 0.5s;
+    }
+  }
 
 	h3 {
-		color: $gray-700;
-
-		&:hover {
-			color: $gray-800;
-		}
+		color: $golden-yellow;
 	}
+
+  .fa-user-friends {
+    color: $golden-yellow;
+  }
 }
 
 .new-league-card {

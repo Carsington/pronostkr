@@ -6,7 +6,7 @@
     <p class="league-competition-date">
       <%= league.competition.start_date.strftime('%d-%m-%Y') %>
       au
-      <%= league.competition.end_date.strftime('%d-%m-%Y') %>
+      <%= league.competition.end_date.strftime('%d-%m-%Y') if league.competition.end_date %>
     </p>
     <div class="d-flex justify-content-between">
       <p class="league-slug">

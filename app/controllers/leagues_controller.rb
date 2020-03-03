@@ -2,12 +2,20 @@ require 'faker'
 class LeaguesController < ApplicationController
 
   def join_league
-   if league = League.find_by(slug: params[:league][:slug].upcase)
-     redirect_to league_path(league.id)
-   else
-    flash.alert = "Cette Ligue n'existe pas :("
-    redirect_to dashboard_user_path
+    league = League.find_by(slug: params[:league][:slug])
+    if league.present?
+      participation = UserLeague.new(user: current_user, league: league)
+      if participation.save
+        flash.notice = "Vous avez rejoint cette ligue"
+        return redirect_to league_path(league.id)
+      elsif participation.errors.messages.has_key?(:user)
+        flash.alert = "Vous appartenez déjà à cette ligue"
+      end
+    else
+      flash.alert = "Cette Ligue n'existe pas :("
     end
+
+    redirect_to request.referrer
   end
 
   def show
