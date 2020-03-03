@@ -1,41 +1,58 @@
 .my-card {
 	width: 18rem;
-	background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), image-url('friends.png');
+	background-image: linear-gradient(to bottom right, black 60%, rgba(255,184,2,0.8) 100%), url('https://dnlzsmybcpo0z.cloudfront.net/games/images/1461010286_Video_Game_Controllers_Click');
   background-size: cover;
-  color: $golden-yellow;
-  transition: text-shadow 0.3s;
-  border-radius: 2px;
+  transition: text-shadow 0.25s;
+  z-index: 1;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top left, black 60%, rgba(255,184,2,0.8) 100%), url('https://dnlzsmybcpo0z.cloudfront.net/games/images/1461010286_Video_Game_Controllers_Click');
+    width: 18rem;
+    background-size: cover;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s ease-in-out;
+  }
 
 	&:hover {
-		text-shadow: 0px 0px 15px $golden-yellow, 0px 0px 15px $golden-yellow;
-    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), image-url('friends.png');
+    // background-image: linear-gradient(to bottom right, rgba(255,184,2,0.8) 100%, black 60%), url('https://dnlzsmybcpo0z.cloudfront.net/games/images/1461010286_Video_Game_Controllers_Click');
+    text-shadow: 0px 0px 15px $golden-yellow, 0px 0px 15px $golden-yellow;
+    transition: text-shadow 0.25s;
+
+    &:before {
+      opacity: 1;
+      transition: opacity 0.5s;
+    }
+  }
+
+	h3 {
+		color: $golden-yellow;
 	}
-
-	// h3 {
-	// 	color: $gray-700;
-
-	// 	&:hover {
-	// 		color: $gray-800;
-	// 	}
-	// }
 }
 
 
-.general-league-card {
-  background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), image-url('crowd.png');
-  background-size: cover;
-  width: 18rem;
-  color: $golden-yellow;
-  transition: text-shadow 0.3s;
-  border-radius: 2px;
-  // transition: background-image 0.8s;
+// .general-league-card {
+//   background-image: linear-gradient(to bottom right, black 60%, rgba(255,184,2,0.8) 100%), url('https://dnlzsmybcpo0z.cloudfront.net/games/images/1461010286_Video_Game_Controllers_Click');
+//   background-size: cover;
+//   width: 18rem;
+//   color: $golden-yellow;
+//   transition: text-shadow 0.3s;
+//   border-radius: 2px;
+//   // transition: background-image 0.8s;
 
-  &:hover {
-    text-shadow: 0px 0px 15px $golden-yellow, 0px 0px 15px $golden-yellow;
-    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), image-url('crowd.png');
-    // transition: background-image 0.8s;
-    transition: text-shadow 0.25s;
-  }
+//   &:hover {
+//     text-shadow: 0px 0px 15px $golden-yellow, 0px 0px 15px $golden-yellow;
+//     background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), image-url('crowd.png');
+//     // transition: background-image 0.8s;
+//     transition: text-shadow 0.25s;
+//   }
   // .fa-user-friends {
 
   // }
@@ -47,4 +64,4 @@
 
 //     }
 //   }
-}
+// }
