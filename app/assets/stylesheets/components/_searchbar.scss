@@ -5,8 +5,8 @@
 .search-element {
   display: flex;
   align-items: center;
-  max-width: 80%;
-
+  // max-width: 80%;
+  margin: 0 24px;
   font-size: 22px;
   border-radius: 5px;
   border: none;
@@ -30,7 +30,6 @@
 }
 
 .search-input {
-
   width: 100%;
   border: none;
   background-color: transparent;
@@ -45,7 +44,6 @@
   &::placeholder {
     color: $searchbar-placeholder;
   }
-
 }
 
 .result-image {

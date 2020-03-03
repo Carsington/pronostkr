@@ -1,5 +1,10 @@
-.league-link:hover {
-  text-decoration: none;
+.league-link {
+  width: 350px;
+  margin: 0 16px 16px 0;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .league-card {
@@ -10,6 +15,12 @@
   width: 350px;
   padding: 24px;
 
+  .league-title, .league-game, .league-competition, .league-slug {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .league-title {
     color: $golden-yellow;
     margin-bottom: 0;
@@ -18,11 +29,13 @@
 
   .league-game, .league-competition {
     margin-bottom: 8px;
+    max-width: 300px;
   }
 
   .league-slug {
     color: $golden-yellow;
     margin-bottom: 0;
+    max-width: 200px;
   }
 
   .league-members-count {
