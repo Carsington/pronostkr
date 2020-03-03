@@ -59,7 +59,7 @@ Competition.all.each do |competition|
   matches = JSON.parse(RestClient.get "https://api.pandascore.co/series/#{competition[:api_id]}/matches?token=#{PANDASCORE_KEY}&per_page=100")
 
   matches.each do |match|
-    next if match["opponents"].empty?
+    next if match["opponents"].length < 2
 
     this_match = Match.create!(
       scheduled_time: match["scheduled_at"],
