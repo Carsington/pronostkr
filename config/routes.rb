@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'users#dashboard', as: :dashboard_user
   get '/sandbox', to: 'pages#sandbox', as: :sandbox
-  get '/league/slug', to: 'leagues#join_league', as: :join_league
+  post '/join_league', to: 'leagues#join_league', as: :join_league
 
 
   resources :users, only: [ :show, :edit ]
