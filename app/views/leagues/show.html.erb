@@ -3,7 +3,7 @@
     <div class="matches">
       <h1>Mes pronos</h1>
       <% @league.competition.matches.each do |match| %>
-        <%= render 'forecasts/card_forecast', match: match %>
+        <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
       <% end %>
     </div>
   </div>
