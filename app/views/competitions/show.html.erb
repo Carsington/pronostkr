@@ -72,7 +72,7 @@
         </div>
       <% end %>
 
-      <% competition.leagues.each do |league| %>
+      <% current_user.leagues.where(competition: competition).each do |league| %>
         <%= render 'shared/league_card', league: league %>
       <% end %>
     </div>
