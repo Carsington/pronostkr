@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>PronostkR &nbsp; | &nbsp; A fun forecasts platform on esports competitions</title>
     <%= render 'shared/favicon' %>
-    
+
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -17,10 +17,8 @@
     <div class="main-container">
       <%= render 'shared/navbar' %>
 
-      <div class="container">
-        <%= render 'shared/flashes' %>
-        <%= yield %> <!-- Here comes the content -->
-      </div>
+      <%= render 'shared/flashes' %>
+      <%= yield %> <!-- Here comes the content -->
 
       <footer><%= render 'shared/footer' %></footer>
 

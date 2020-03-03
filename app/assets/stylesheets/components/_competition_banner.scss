@@ -1,12 +1,15 @@
-.competition-banner {
+.competiton-banner-img {
   // background-image: url("https://steamcdn-a.akamaihd.net/steam/subs/54029/header_586x192.jpg?t=1544227353");
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("https://pic.clubic.com/v1/images/1775169/raw?width=1200&fit=max&hash=73e51752cc8a9f17d18e110229fae45e2e28a9ba");
   background-size: cover;
   background-position: top;
+}
+
+.competition-banner {
   display: flex;
   flex-direction: column;
   margin: 0 0 50px 0;
-  padding: 8px 16px;
+  padding: 8px 0px;
   color: $gray-100;
 }
 
