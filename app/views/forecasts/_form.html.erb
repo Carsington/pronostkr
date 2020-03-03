@@ -1,0 +1,7 @@
+<% user_forecast = Forecast.find_by(user: current_user, match: match) %>
+<% forecast = user_forecast ? user_forecast : Forecast.new(user: current_user, match: match) %>
+
+<%= simple_form_for forecast, remote: true, html: { id: "match-#{match.id}" } do |f| %>
+  <%= f.input :match, input_html: {value: match.id} %>
+  <%= f.input :team %>
+<% end %>

@@ -28,3 +28,13 @@
 		color: $golden-yellow;
 	}
 }
+
+.btn-outline-warning {
+  color: $golden-yellow;
+  border-color: $golden-yellow;
+
+  &:hover{
+    background-color: $golden-yellow;
+  }
+}
+

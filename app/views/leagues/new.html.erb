@@ -1,5 +1,13 @@
-<%= simple_form_for([@league]) do |f| %>
-  <%= f.input :name, as: :string, label: 'Nom de ta ligue:', placeholder: "Team naze" %>
-  <%= f.association :competition, label: 'Compétitions  :' %>
-  <%= f.submit "Créer ta ligue", class: "btn btn-primary btn-block" %>
-<% end %>
+<div class="row justify-content-center mt-5">
+  <div class="col-6">
+
+    <div class="new-league-card p-4">
+      <%= simple_form_for([@league]) do |f| %>
+        <%= f.input :name, as: :string, label: false, placeholder: "Nom de ta ligue" %>
+        <%= f.association :competition, label: false, prompt: "-- Choisis la compétition --" %>
+        <%= f.submit "Crée ta ligue", class: "btn btn-outline-info" %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

@@ -20,6 +20,7 @@ class LeaguesController < ApplicationController
 
   def show
     @league = League.find(params[:id])
+    @page_title = "#" + @league.slug
   end
 
   def create

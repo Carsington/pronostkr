@@ -41,31 +41,7 @@
   }
 }
 
-
-// .general-league-card {
-//   background-image: linear-gradient(to bottom right, black 60%, rgba(255,184,2,0.8) 100%), url('https://dnlzsmybcpo0z.cloudfront.net/games/images/1461010286_Video_Game_Controllers_Click');
-//   background-size: cover;
-//   width: 18rem;
-//   color: $golden-yellow;
-//   transition: text-shadow 0.3s;
-//   border-radius: 2px;
-//   // transition: background-image 0.8s;
-
-//   &:hover {
-//     text-shadow: 0px 0px 15px $golden-yellow, 0px 0px 15px $golden-yellow;
-//     background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), image-url('crowd.png');
-//     // transition: background-image 0.8s;
-//     transition: text-shadow 0.25s;
-//   }
-  // .fa-user-friends {
-
-  // }
-
-//   h3 {
-
-
-//     &:hover {
-
-//     }
-//   }
-// }
+.new-league-card {
+	background: $tier1-card-bg;
+	box-shadow: 0 0 5px $gray-400;
+}

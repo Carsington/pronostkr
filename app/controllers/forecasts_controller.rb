@@ -7,7 +7,7 @@ class ForecastsController < ApplicationController
 
     respond_to do |format|
       format.html { render 'competitions/show', locals: { competition: @forecast.competition } }
-      # format.js
+      format.js
     end
   end
 
@@ -17,7 +17,7 @@ class ForecastsController < ApplicationController
 
     respond_to do |format|
       format.html { render 'competitions/show', locals: { competition: @forecast.competition } }
-      # format.js
+      format.js
     end
   end
 
@@ -30,7 +30,7 @@ class ForecastsController < ApplicationController
   def forecast_values
     @values = {
       match: Match.find(params[:forecast][:match]),
-      team: Team.find(params[:forecast][:team])
+      team: Team.find_by(id: params[:forecast][:team])
     }
   end
 end
