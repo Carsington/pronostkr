@@ -1,9 +1,9 @@
 <div class="row justify-content-center mt-5">
-<div class="col-6">
-<%= simple_form_for([@league]) do |f| %>
-  <%= f.input :name, as: :string, label: 'Nom de ta ligue:', placeholder: "Nom de ta ligue" %>
-  <%= f.association :competition, label: 'Compétitions  :', prompt: "-- Choisis la compétition --" %>
-  <%= f.submit "Créer ta ligue", class: "btn btn-outline-info" %>
-<% end %>
-</div>
+  <div class="col-6">
+    <%= simple_form_for([@league]) do |f| %>
+      <%= f.input :name, as: :string, label: 'Nom de ta ligue:', placeholder: "Nom de ta ligue" %>
+      <%= f.association :competition, label: 'Compétitions  :', prompt: "-- Choisis la compétition --" %>
+      <%= f.submit "Créer ta ligue", class: "btn btn-outline-info" %>
+    <% end %>
+  </div>
 </div>
