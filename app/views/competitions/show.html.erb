@@ -1,19 +1,39 @@
-<div class="row competition-page">
-  <div class="col-9">
-
-    <div class="competition-header">
-      <h3><%= competition.game.full_name %></h3>
-    </div>
-
-    <div class="competition-infos">
-      <p><%= competition.location %></p>
-      <div class="start-end-dates">
-        <p>Début : <%= competition.start_date.strftime('%d-%m-%Y - %H:%M:%S') %></p>
-        <p>Fin : <%= competition.end_date.strftime('%d-%m-%Y - %H:%M:%S') %></p>
+<div class="row competition-banner">
+  <div class="banner-head d-flex">
+    <div class="status-name d-flex">
+      <div class="competition-status d-flex">
+        <i class="fas fa-circle"></i>
+        <span>ONGOING</span>
       </div>
-      <p><%= competition.description %></p>
+      <h2><%= competition.name %></h2>
     </div>
+    <%= image_tag("games/cs-go-logo.png", class: "game-logo") %>
+  </div>
+  <h5><%= competition.game.full_name %></h5>
+  <table class="competition-infos">
+    <tbody>
+      <tr>
+        <td class="infos-item first-item">
+          <p class="item-head">Début</p>
+          <p class="item-content"><%= competition.start_date.strftime('%d.%m.%Y') %></p>
+        </td>
+        <td class="infos-item second-item">
+          <p class="item-head">Organisateur</p>
+          <p class="item-content">www.eddy-malou@ovanium.rdc</p>
+        </td>
+        <td class="infos-item third-item">
+          <p class="item-head">Matchs</p>
+          <p class="item-content"><%= competition.matches.count %></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
+  <p><%#= competition.description %></p>
+</div>
+
+<div class="row competition-content">
+  <div class="col-9">
     <div class="forecasts-list">
       <% competition.matches.each do |match| %>
         <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
