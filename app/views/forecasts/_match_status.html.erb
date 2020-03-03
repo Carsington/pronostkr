@@ -1,7 +1,7 @@
 <% if (match.team_matches[0].is_winner != nil) %>
   <p class="status-red"><i class="fas fa-circle"></i> Terminé !</p>
-<% elsif (Time.now.to_i > match.scheduled_time.to_i) %>
+<% elsif (Time.now > match.scheduled_time) %>
   <p class="status-green"><i class="fas fa-circle"></i> en cours</p>
-<% elsif (Time.now.to_i < match.scheduled_time.to_i) %>
+<% elsif (Time.now < match.scheduled_time) %>
   <%= render 'forecasts/countdown' %>
 <% end %>
