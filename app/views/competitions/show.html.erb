@@ -1,5 +1,6 @@
 <div class="row competition-page">
   <div class="col-9">
+
     <div class="competition-header">
       <h3><%= competition.game.full_name %></h3>
     </div>
@@ -15,34 +16,25 @@
 
     <div class="forecasts-list">
       <% competition.matches.each do |match| %>
-        <%#= render "forecasts/forecast_card", match: match, versus_image_path: "versus.png" %>
-
-        <%# user_forecast = Forecast.find_by(user: current_user, match: match) %>
-        <%# if user_forecast.nil? %>
-          <%#= render 'forecasts/form_new_forecast', match: match %>
-        <%# else %>
-          <%#= render 'forecasts/form_edit_forecast', match: match, forecast: user_forecast %>
-        <%# end %>
-
-        <%= render 'forecasts/form_forecast', match: match %>
+        <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
       <% end %>
     </div>
-
-    <!-- TWITCH LIVE -->
-    <!-- <iframe
-      src="https://player.twitch.tv/?channel=esl_csgo&muted=true"
-      height="480"
-      width="853"
-      frameborder="0"
-      scrolling="no"
-      allowfullscreen="true">
-    </iframe> -->
   </div>
+
+  <!-- TWITCH LIVE -->
+  <!-- <iframe
+    src="https://player.twitch.tv/?channel=esl_csgo&muted=true"
+    height="480"
+    width="853"
+    frameborder="0"
+    scrolling="no"
+    allowfullscreen="true">
+  </iframe> -->
 
   <div class="col-3">
     <div class="border border-secondary text-center">
       <%= link_to new_league_path, class: "card-link" do %>
-      <%= render 'shared/card_create' %>
+        <%= render 'shared/card_create' %>
       <% end %>
     </div>
 
@@ -51,9 +43,7 @@
     </div>
 
     <% competition.leagues.each do |league| %>
-    <!-- <div class="border border-secondary text-center"> -->
       <%= render 'shared/league_card', league: league %>
-    <!-- </div> -->
     <% end %>
   </div>
 </div>
