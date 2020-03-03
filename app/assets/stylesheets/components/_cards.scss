@@ -1,43 +1,50 @@
 .my-card {
 	width: 18rem;
-	background: $gray-200;
+	background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), image-url('friends.png');
+  background-size: cover;
+  color: $golden-yellow;
+  transition: text-shadow 0.3s;
+  border-radius: 2px;
 
 	&:hover {
-		background: $gray-100;
+		text-shadow: 0px 0px 15px $golden-yellow, 0px 0px 15px $golden-yellow;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), image-url('friends.png');
 	}
 
-	h3 {
-		color: $gray-700;
+	// h3 {
+	// 	color: $gray-700;
 
-		&:hover {
-			color: $gray-800;
-		}
-	}
+	// 	&:hover {
+	// 		color: $gray-800;
+	// 	}
+	// }
 }
 
 
 .general-league-card {
   background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), image-url('crowd.png');
   background-size: cover;
-  background-position: bottom 80px;
   width: 18rem;
-  transition: background-image 0.8s;
+  color: $golden-yellow;
+  transition: text-shadow 0.3s;
+  border-radius: 2px;
+  // transition: background-image 0.8s;
 
   &:hover {
+    text-shadow: 0px 0px 15px $golden-yellow, 0px 0px 15px $golden-yellow;
     background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), image-url('crowd.png');
-    transition: background-image 0.8s;
+    // transition: background-image 0.8s;
+    transition: text-shadow 0.25s;
   }
+  // .fa-user-friends {
 
-  .fa-user-friends {
+  // }
 
-  }
+//   h3 {
 
-  h3 {
-    color: $golden-yellow;
-    transition: text-shadow 0.5s;
 
-    &:hover {
-      text-shadow: 0px 0px 15px $golden-yellow, 0px 0px 15px $golden-yellow;
-    }
-  }
+//     &:hover {
+
+//     }
+//   }
 }

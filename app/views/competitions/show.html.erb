@@ -46,11 +46,13 @@
       <% end %>
     </div>
 
-    <div class="border border-secondary text-center">
-      <%= link_to league_path, class: "card-link" do %>
-        <%= render 'shared/card_join_general' %>
-      <% end %>
-    </div>
+    <% unless current_user.already_joined? competition.general_league %>
+      <div class="border border-secondary text-center">
+        <%= link_to join_league_path(league: {slug: competition.general_league.slug}), class: "card-link", method: :post do %>
+          <%= render 'shared/card_join_general' %>
+        <% end %>
+      </div>
+    <% end %>
 
     <% competition.leagues.each do |league| %>
     <!-- <div class="border border-secondary text-center"> -->
