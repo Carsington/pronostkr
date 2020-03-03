@@ -36,25 +36,25 @@
   <div class="col-9">
     <div class="forecasts-list">
       <% competition.matches.each do |match| %>
-        <%= render 'forecasts/form_forecast', match: match %>
+        <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
       <% end %>
     </div>
-
-    <!-- TWITCH LIVE -->
-    <!-- <iframe
-      src="https://player.twitch.tv/?channel=esl_csgo&muted=true"
-      height="480"
-      width="853"
-      frameborder="0"
-      scrolling="no"
-      allowfullscreen="true">
-    </iframe> -->
   </div>
+
+  <!-- TWITCH LIVE -->
+  <!-- <iframe
+    src="https://player.twitch.tv/?channel=esl_csgo&muted=true"
+    height="480"
+    width="853"
+    frameborder="0"
+    scrolling="no"
+    allowfullscreen="true">
+  </iframe> -->
 
   <div class="col-3">
     <div class="border border-secondary text-center">
       <%= link_to new_league_path, class: "card-link" do %>
-      <%= render 'shared/card_create' %>
+        <%= render 'shared/card_create' %>
       <% end %>
     </div>
 
@@ -63,9 +63,7 @@
     </div>
 
     <% competition.leagues.each do |league| %>
-    <!-- <div class="border border-secondary text-center"> -->
       <%= render 'shared/league_card', league: league %>
-    <!-- </div> -->
     <% end %>
   </div>
 </div>
