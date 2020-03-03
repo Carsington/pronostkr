@@ -1,12 +1,5 @@
-require 'faker'
-
-N_USERS = 20
-N_COMPETITIONS = 25
-N_TEAMS = 150
-N_PLAYERS = 800
-N_MATCHES = 2000
-N_LEAGUES = 4
-N_FORCASTS = 200
+require "json"
+require "rest-client"
 
 puts "Destroying old instances..."
 
@@ -18,127 +11,86 @@ League.destroy_all
 Competition.destroy_all
 Game.destroy_all
 
-
-puts "Creating new instances..."
-
-# toto
-User.create!(
-    email: "toto@toto.toto",
-    username: "toto",
-    password: "cocorico"
-  )
-
 # USERS
-N_USERS.times do
-  username = Faker::Internet.unique.username
+User.create!(
+  email: "pilou@example.com",
+  username: "pilou",
+  password: "cocorico"
+)
 
-  User.create!(
-    email: Faker::Internet.safe_email(name: username),
-    username: username,
-    password: "cocorico"
-  )
-end
-puts "Built #{User.count} User instances!"
+# GAMES
+Game.create!(full_name: "Counter-Strike: Global Offensive", acronym: "cs-go")
+Game.create!(full_name: "League of Legends", acronym: "league-of-legends")
+# Game.create!(full_name: "Fortnite", acronym: "fortnite")
+Game.create!(full_name: "Overwatch", acronym: "ow")
+Game.create!(full_name: "Rocket League", acronym: "rl")
 
+acronyms = Game.all.map { |game| game.acronym }
+puts "Built #{Game.count} Game instances!"
 
-# GAME
-Game.create!(full_name: "Counter-Strike: Global Offensive", acronym: "csgo")
-Game.create!(full_name: "League of Legends", acronym: "lol")
-puts "Built LOL & CSGO Game instances!"
+PANDASCORE_KEY = "difWeljL3CxNE3Nx_z37WUo_OeLyaVqwskBftDOJYVN_z4uiFcI"
 
-# COMPETITIONS
-N_COMPETITIONS.times do |i|
-  Competition.create!(
-    name: "Competition #{i*i}",
-    description: Faker::Lorem.unique.paragraph(sentence_count: 15),
-    location: Faker::Address.unique.full_address,
-    start_date: Faker::Date.between(from: 180.days.ago, to: 2.days.ago),
-    end_date: Faker::Date.between(from: 2.days.from_now, to: 180.days.from_now),
-    game: Game.all.sample
-  )
-end
-puts "Built #{Competition.count} Competition instances!"
+10.times do |page_number|
+  puts "Building Competition instances for page ##{page_number + 1}..."
 
-# TEAMS
-N_TEAMS.times do
-  Team.create!(
-    name: Faker::Team.unique.name,
-    nationality: Faker::Address.unique.country
-  )
-end
-puts "Built #{Team.count} Team instances!"
+  competitions_request = "https://api.pandascore.co/series?token=#{PANDASCORE_KEY}&page=#{page_number + 1}&filter[year]=2020"
+  competitions = JSON.parse(RestClient.get competitions_request)
 
-# PLAYERS
-N_PLAYERS.times do
-  Player.create!(
-    scene_name: Faker::Internet.unique.domain_word,
-    full_name: Faker::Name.unique.name,
-    team: Team.all.sample
-  )
-end
-puts "Built #{Player.count} Player instances!"
+  competitions.each do |competition|
+    next unless acronyms.include? competition["videogame"]["slug"]
 
-# MATCHES
-N_MATCHES.times do
-  competition = Competition.all.sample
-
-  Match.create!(
-    scheduled_time: Faker::Time.between_dates(from: competition.start_date, to: competition.end_date),
-    competition: competition
-  )
-end
-puts "Built #{Match.count} Match instances!"
-
-# TEAM_MATCHES
-Match.all.each do |match|
-  team_a = Team.all.sample
-  team_b = Team.all.sample
-  team_b = Team.all.sample until team_b != team_a
-
-  outcome = [true, false, nil].sample
-
-  TeamMatch.create!(match: match, team: team_a, is_winner: outcome)
-  TeamMatch.create!(match: match, team: team_b, is_winner: outcome.nil? ? nil : !outcome)
-end
-puts "Built #{TeamMatch.count} TeamMatch instances!"
-
-
-# LEAGUES
-N_LEAGUES.times do |i|
-  League.create!(
-    slug: Faker::Lorem.unique.characters(number: 6).upcase,
-    name: "League #{i*i}",
-    competition: Competition.all.sample
-  )
-end
-puts "Built #{League.count} League instances!"
-
-# USER_LEAGUES
-League.all.each do |league|
-  users = User.all.sample(10)
-
-  users.each do |user|
-    UserLeague.create!(
-      user: user,
-      league: league,
-      is_owner: [true, false].sample # TODO: change to only 1 league owner
+    Competition.create!(
+      name: "#{competition["league"]["name"]}#{' ' + competition["name"] if competition["name"]}",
+      description: competition["description"],
+      api_id: competition["id"],
+      start_date: competition["begin_at"],
+      end_date: competition["end_at"],
+      game: Game.find_by(acronym: competition["videogame"]["slug"])
     )
   end
 end
-puts "Built #{UserLeague.count} UserLeague instances!"
 
-# FORECASTS
-N_FORCASTS.times do
-  user = User.all.sample
-  match = Match.all.sample
-  teams = match.teams
+puts "Built #{Competition.count} Competition instances!"
 
-  Forecast.create!(
-    user: user,
-    match: match,
-    team: teams.sample
-  )
+
+# MATCHES
+Competition.all.each do |competition|
+
+  matches = JSON.parse(RestClient.get "https://api.pandascore.co/series/#{competition[:api_id]}/matches?token=#{PANDASCORE_KEY}&per_page=100")
+
+  matches.each do |match|
+    next if match["opponents"].empty?
+
+    this_match = Match.create!(
+      scheduled_time: match["scheduled_at"],
+      competition: competition
+    )
+
+    opponents = match["opponents"]
+
+    opponents.each do |opponent|
+      team = opponent["opponent"]
+
+      this_team = Team.find_by(api_id: team["id"])
+
+      if this_team.nil?
+        this_team = Team.create!(
+          name: team["name"],
+          nationality: team["location"],
+          logo_url: team["image_url"],
+          api_id: team["id"].to_s
+        )
+      end
+
+      TeamMatch.create!(
+        match: this_match,
+        team: this_team,
+        is_winner: match["winner_id"] ? this_team[:api_id] == match["winner_id"].to_s : nil
+      )
+    end
+  end
+
+  puts "Built #{Match.count} Match instances!"
 end
-puts "Built #{Forecast.count} Forecast instances!"
 
-puts "Success!"
+puts "Seed complete!"
