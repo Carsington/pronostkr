@@ -38,6 +38,10 @@
 
   .fa-user-friends {
     color: $tier1-txt;
+
+    &:hover {
+      color: $golden-yellow;
+    }
   }
 }
 
