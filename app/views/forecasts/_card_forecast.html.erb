@@ -3,7 +3,7 @@
 
   <div class="team-card <%= %> " id="team-a" data-team-id="<%= match.teams[0].id %>">
     <p class="team-name"><%= match.teams[0].name %></p>
-    <%= image_tag "teams/fnatic_logo.png", class: "team-logo team-a-logo" %>
+    <%= image_tag match.teams[0].logo_url || "teams/lewagon-logo.png", class: "team-logo team-a-logo" %>
   </div>
 
   <div class="versus-img">
@@ -11,7 +11,7 @@
   </div>
 
   <div class="team-card" id="team-b" data-team-id="<%= match.teams[1].id %>">
-    <%= image_tag "teams/astralis_logo.png", class: "team-logo team-b-logo" %>
+    <%= image_tag match.teams[1].logo_url || "teams/lewagon-logo.png", class: "team-logo team-b-logo" %>
     <p class="team-name"><%= match.teams[1].name %></p>
   </div>
 
