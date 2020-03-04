@@ -1,31 +1,28 @@
 <div class="container">
   <div class="row justify-content-center mt-4">
-    <div class="col-12">
-
+    <div class="col 9 d-flex flex-column">
       <%= render 'shared/searchbar' %>
       <% if @query && !@no_results %>
-        <% @competitions.each do |competition| %>
-          <%= render 'shared/searchresult', competition: competition %>
-        <% end %>
+      <% @competitions.each do |competition| %>
+      <%= render 'shared/searchresult', competition: competition %>
       <% end %>
-      <br>
+      <% end %>
 
-      <ul id="league-card">
+      <h1 class="text-center mt-3">Mes ligues</h1>
+
+      <div class="leagues-list d-flex flex-wrap justify-content-center my-3">
         <% @user.leagues.each do |league| %>
-          <li><%= render 'shared/league_card', league: league %></li>
-          <br>
+          <%= render 'shared/league_card', league: league %>
         <% end %>
-      </ul>
+      </div>
+    </div>
 
-      <br>
+    <div class="col-3">
       <%= link_to new_league_path, class: "card-link" do %>
         <%= render 'shared/card_create' %>
       <% end %>
       <br>
       <%= render 'shared/card_join' %>
-      <br>
-      <br>
-
     </div>
   </div>
 </div>

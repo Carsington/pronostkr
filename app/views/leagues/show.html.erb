@@ -8,17 +8,17 @@
         <% end %>
       </div>
     </div>
+    
+    <div class="col-4">
+      <div class="classement">
+        <h1>Classement</h1>
+        <div class="card-match border border-secondary p-2 my-3">
+          <p>4: <%= User.last.username %></p>
+        </div>
 
+        <%= link_to @league.competition.name, @league.competition, class: "btn btn-outline-warning" %>
 
-  <div class="col-4">
-    <div class="classement">
-      <h1>Classement</h1>
-      <div class="card-match border border-secondary p-2 my-3">
-        <p>4: <%= User.last.username %></p>
       </div>
-
-      <%= link_to @league.competition.name, @league.competition, class: "btn btn-outline-warning" %>
-
     </div>
   </div>
 </div>
