@@ -32,7 +32,11 @@
         </tbody>
       </table>
 
-      <p><%= competition.description %></p>
+      <div class="banner-leagues-list d-flex flex-wrap">
+        <% current_user.leagues.where(competition: competition).each do |league| %>
+        <%= render 'shared/banner_league_card', league: league %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
@@ -49,15 +53,15 @@
       </div>
     </div>
 
-      <!-- TWITCH LIVE -->
-      <!-- <iframe
-        src="https://player.twitch.tv/?channel=esl_csgo&muted=true"
-        height="480"
-        width="853"
-        frameborder="0"
-        scrolling="no"
-        allowfullscreen="true">
-      </iframe> -->
+    <!-- TWITCH LIVE -->
+    <!-- <iframe
+      src="https://player.twitch.tv/?channel=esl_csgo&muted=true"
+      height="480"
+      width="853"
+      frameborder="0"
+      scrolling="no"
+      allowfullscreen="true">
+    </iframe> -->
 
     <div class="col-4 d-flex flex-column align-items-end">
       <div class="border border-secondary text-center">
@@ -65,6 +69,7 @@
         <%= render 'shared/card_create' %>
         <% end %>
       </div>
+      <br>
 
       <% unless current_user.already_joined? competition.general_league %>
         <div class="border border-secondary text-center">
@@ -72,10 +77,6 @@
             <%= render 'shared/card_join_general' %>
           <% end %>
         </div>
-      <% end %>
-
-      <% current_user.leagues.where(competition: competition).each do |league| %>
-        <%= render 'shared/league_card', league: league %>
       <% end %>
     </div>
 
