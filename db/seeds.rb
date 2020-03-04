@@ -45,7 +45,8 @@ PANDASCORE_KEY = "difWeljL3CxNE3Nx_z37WUo_OeLyaVqwskBftDOJYVN_z4uiFcI"
       api_id: competition["id"],
       start_date: competition["begin_at"],
       end_date: competition["end_at"],
-      game: Game.find_by(acronym: competition["videogame"]["slug"])
+      game: Game.find_by(acronym: competition["videogame"]["slug"]),
+      url: competition["league"]["url"]
     )
   end
 end

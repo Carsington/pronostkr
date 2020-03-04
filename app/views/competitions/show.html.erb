@@ -20,13 +20,14 @@
               <p class="item-content"><%= competition.start_date.strftime('%d.%m.%Y') %></p>
             </td>
             <td class="infos-item second-item">
-              <p class="item-head">Organisateur</p>
-              <p class="item-content">www.eddy-malou@ovanium.rdc</p>
-            </td>
-            <td class="infos-item third-item">
               <p class="item-head">Matchs</p>
               <p class="item-content"><%= competition.matches.count %></p>
             </td>
+            <% if competition.url %>
+              <td class="infos-item third-item">
+                <%= link_to "Site officiel", competition.url, target: "_blank", class: "btn btn-info" %>
+              </td>
+            <% end %>
           </tr>
         </tbody>
       </table>
@@ -38,7 +39,7 @@
 
 <div class="container">
   <div class="row competition-content">
-    
+
     <div class="col-8">
       <h1 class="mb-4">Mes pronos</h1>
       <div class="forecasts-list">
