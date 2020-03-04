@@ -1,9 +1,11 @@
 <%= link_to competition_path(competition), class: "search-card-link" do %>
-  <div class="search-element">
-  <%= image_tag "eddy_avatar.png", alt: "alttext", class: "result-image" %>
-    <div class="search-result">
-      <div><h3><%= competition.name %></p></div>
-      <div><h5><%= competition.game.full_name %></p></div>
-    </div>
+<div class="search-element">
+  <%= image_tag competition.game.logo ,class: 'result-image', alt: "alttext" %>
+  <div class="search-result">
+    <div><h3><%= competition.name %></h3></div>
   </div>
+  <div class="match-status d-flex">
+    <%= render 'competitions/competition_status', competition: competition %>
+  </div>
+</div>
 <% end %>
