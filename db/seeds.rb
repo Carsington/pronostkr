@@ -18,6 +18,17 @@ User.create!(
   password: "cocorico"
 )
 
+# require "faker"
+# 10.times do
+#   username = Faker::Internet.unique.username
+#   User.create!(
+#     email: Faker::Internet.safe_email(name: username),
+#     username: username,
+#     password: "cocorico"
+#   )
+# end
+# puts "Built #{User.count} User instances!"
+
 # GAMES
 Game.create!(full_name: "Counter-Strike: Global Offensive", acronym: "cs-go", logo: "https://1000logos.net/wp-content/uploads/2017/12/CSGO-Symbol.jpg")
 Game.create!(full_name: "League of Legends", acronym: "league-of-legends", logo: "https://pre.breakflip.com/uploads/Drui/Avril%202018/Images/Lol.png")
@@ -60,6 +71,8 @@ Competition.all.each do |competition|
 
   matches.each do |match|
     next if match["opponents"].length < 2
+    next if match["status"] == "canceled"
+    next if match["rescheduled"]
 
     this_match = Match.create!(
       scheduled_time: match["scheduled_at"],
@@ -85,7 +98,7 @@ Competition.all.each do |competition|
       TeamMatch.create!(
         match: this_match,
         team: this_team,
-        is_winner: match["winner_id"] ? this_team[:api_id] == match["winner_id"].to_s : nil
+        is_winner: match["end_at"] ? this_team[:api_id] == match["winner_id"].to_s : nil
       )
     end
   end

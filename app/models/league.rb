@@ -5,4 +5,8 @@ class League < ApplicationRecord
 
   validates :slug, :name, :competition, presence: true
   validates :slug, uniqueness: true
+
+  def ranking
+    self.users
+  end
 end

@@ -13,7 +13,9 @@
       <div class="classement">
         <h1>Classement</h1>
         <div class="card-match border border-secondary p-2 my-3">
-          <p>4: <%= User.last.username %></p>
+          <ol><% @league.ranking.each do |ranked_user| %>
+            <li><%= ranked_user.username %></li>
+          <% end %></ol>
         </div>
 
         <%= link_to @league.competition.name, @league.competition, class: "btn btn-outline-warning" %>
