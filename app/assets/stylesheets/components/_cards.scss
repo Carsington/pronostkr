@@ -22,9 +22,9 @@
   }
 
 	&:hover {
-    // background-image: linear-gradient(to bottom right, rgba(255,184,2,0.8) 100%, black 60%), url('https://dnlzsmybcpo0z.cloudfront.net/games/images/1461010286_Video_Game_Controllers_Click');
     text-shadow: 0px 0px 15px $golden-yellow, 0px 0px 15px $golden-yellow;
     transition: text-shadow 0.25s;
+    color: $golden-yellow;
 
     &:before {
       opacity: 1;
@@ -32,12 +32,16 @@
     }
   }
 
-	h3 {
+	h3, p {
 		color: $golden-yellow;
 	}
 
   .fa-user-friends {
-    color: $golden-yellow;
+    color: $tier1-txt;
+
+    &:hover {
+      color: $golden-yellow;
+    }
   }
 }
 
