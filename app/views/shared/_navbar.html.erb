@@ -8,9 +8,14 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <% if @page_title %>
-    <%= @page_title %>
-  <% end %>
+    <span id="page_title">
+      <% if @page_title %>
+        <%= @page_title %>
+      <% end %>
+    </span>
+    <% if @page_slug %>
+      <%= @page_slug %>
+    <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">

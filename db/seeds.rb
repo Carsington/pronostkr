@@ -11,7 +11,7 @@ League.destroy_all
 Competition.destroy_all
 Game.destroy_all
 
-# USERS
+#USERS
 User.create!(
   email: "pilou@example.com",
   username: "pilou",
@@ -19,11 +19,11 @@ User.create!(
 )
 
 # GAMES
-Game.create!(full_name: "Counter-Strike: Global Offensive", acronym: "cs-go")
-Game.create!(full_name: "League of Legends", acronym: "league-of-legends")
+Game.create!(full_name: "Counter-Strike: Global Offensive", acronym: "cs-go", logo: "https://1000logos.net/wp-content/uploads/2017/12/CSGO-Symbol.jpg")
+Game.create!(full_name: "League of Legends", acronym: "league-of-legends", logo: "https://pre.breakflip.com/uploads/Drui/Avril%202018/Images/Lol.png")
 # Game.create!(full_name: "Fortnite", acronym: "fortnite")
-Game.create!(full_name: "Overwatch", acronym: "ow")
-Game.create!(full_name: "Rocket League", acronym: "rl")
+Game.create!(full_name: "Overwatch", acronym: "ow", logo: "https://gamepedia.cursecdn.com/overwatch_gamepedia/thumb/b/b2/Overwatch_White.jpg/350px-Overwatch_White.jpg?version=b9ad5966dd0c3946bc449870ecd1ba09")
+Game.create!(full_name: "Rocket League", acronym: "rl", logo: "https://www.dafont.com/forum/attach/orig/5/1/517500.png")
 
 acronyms = Game.all.map { |game| game.acronym }
 puts "Built #{Game.count} Game instances!"

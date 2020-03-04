@@ -20,7 +20,10 @@ class LeaguesController < ApplicationController
 
   def show
     @league = League.find(params[:id])
-    @page_title = "#" + @league.slug
+    @page_title = @league.name
+    unless @league.name.start_with?("Gén")
+      @page_slug = " - #" + @league.slug
+    end
   end
 
   def create
@@ -38,6 +41,7 @@ class LeaguesController < ApplicationController
 
   def new
     @league = League.new
+    @competition_id = params[:competition_id]
   end
 
   private

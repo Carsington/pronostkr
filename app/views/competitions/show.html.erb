@@ -65,7 +65,7 @@
 
     <div class="col-4 d-flex flex-column align-items-end">
       <div class="border border-secondary text-center">
-        <%= link_to new_league_path, class: "card-link" do %>
+        <%= link_to new_league_path(competition_id: competition.id), class: "card-link" do %>
         <%= render 'shared/card_create' %>
         <% end %>
       </div>
