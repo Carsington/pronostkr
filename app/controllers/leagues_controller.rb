@@ -41,6 +41,7 @@ class LeaguesController < ApplicationController
 
   def new
     @league = League.new
+    @competition_id = params[:competition_id]
   end
 
   private
