@@ -3,7 +3,7 @@
     <div class="col 9 d-flex flex-column">
       <%= render 'shared/searchbar' %>
       <% if @query && !@no_results %>
-      <% @competitions.each do |competition| %>
+      <% @competitions.first(10).each do |competition| %>
       <%= render 'shared/searchresult', competition: competition %>
       <% end %>
       <% end %>
