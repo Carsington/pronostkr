@@ -4,5 +4,8 @@
   <div class="search-result">
     <div><h3><%= competition.name %></h3></div>
   </div>
+  <div class="match-status d-flex">
+    <%= render 'competitions/competition_status', competition: competition %>
+  </div>
 </div>
 <% end %>

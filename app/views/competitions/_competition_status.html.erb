@@ -1,0 +1,5 @@
+<% if (Time.now < competition.start_date) %>
+  <p class="status-finished"><i class="fas fa-circle"></i> Terminé !</p>
+<% elsif (Time.now > competition.start_date) %>
+  <p class="status-ongoing"><i class="fas fa-circle"></i> En cours</p>
+<% end %>
