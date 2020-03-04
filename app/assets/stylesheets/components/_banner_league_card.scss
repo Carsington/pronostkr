@@ -1,0 +1,44 @@
+.banner-league-link {
+  width: 250px;
+  margin: 0 16px 16px 0;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.banner-league-card {
+  background: linear-gradient(rgba(50,50,50,0.65), rgba(50,50,50,0.65));
+  background-size: cover;
+  color: $tier1-txt;
+  width: 250px;
+  padding: 16px;
+  border-radius: 4px;
+
+  .banner-league-title, .banner-league-slug {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $golden-yellow;
+  }
+
+  .banner-league-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .banner-league-slug {
+    margin-bottom: 0;
+    max-width: 150px;
+  }
+
+  .banner-league-members-count {
+    color: $discord-blue;
+    margin-bottom: 0;
+  }
+}
+
+.banner-league-card:hover {
+  color: $tier1-txt-selected;
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8));
+}

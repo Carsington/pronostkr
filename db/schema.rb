@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_03_04_114451) do
     t.bigint "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "url"
     t.index ["game_id"], name: "index_competitions_on_game_id"
   end
 

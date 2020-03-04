@@ -1,0 +1,15 @@
+<%= link_to league, class: 'banner-league-link' do %>
+  <div class="banner-league-card">
+    <h4 class="banner-league-title"><%= league.name %></h4>
+    <div class="d-flex justify-content-between">
+      <p class="banner-league-slug">
+        <i class="fas fa-hashtag"></i>
+        <%= league.slug || 'K2000' %>
+      </p>
+      <p class="banner-league-members-count">
+        <%= league.users.count %>
+        <i class="fas fa-user-friends"></i>
+      </p>
+    </div>
+  </div>
+<% end %>
