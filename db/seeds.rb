@@ -60,6 +60,8 @@ Competition.all.each do |competition|
 
   matches.each do |match|
     next if match["opponents"].length < 2
+    next if match["status"] == "canceled"
+    next if match["rescheduled"]
 
     this_match = Match.create!(
       scheduled_time: match["scheduled_at"],
@@ -85,7 +87,7 @@ Competition.all.each do |competition|
       TeamMatch.create!(
         match: this_match,
         team: this_team,
-        is_winner: match["winner_id"] ? this_team[:api_id] == match["winner_id"].to_s : nil
+        is_winner: match["end_at"] ? this_team[:api_id] == match["winner_id"].to_s : nil
       )
     end
   end
