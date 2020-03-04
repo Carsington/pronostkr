@@ -18,6 +18,17 @@ User.create!(
   password: "cocorico"
 )
 
+# require "faker"
+# 10.times do
+#   username = Faker::Internet.unique.username
+#   User.create!(
+#     email: Faker::Internet.safe_email(name: username),
+#     username: username,
+#     password: "cocorico"
+#   )
+# end
+# puts "Built #{User.count} User instances!"
+
 # GAMES
 Game.create!(full_name: "Counter-Strike: Global Offensive", acronym: "cs-go")
 Game.create!(full_name: "League of Legends", acronym: "league-of-legends")
