@@ -40,6 +40,7 @@
   <div class="row competition-content">
     
     <div class="col-8">
+      <h1 class="mb-4">Mes pronos</h1>
       <div class="forecasts-list">
         <% competition.matches.each do |match| %>
         <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
@@ -76,6 +77,6 @@
         <%= render 'shared/league_card', league: league %>
       <% end %>
     </div>
-    
+
   </div>
 </div>
