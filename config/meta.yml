@@ -1,0 +1,5 @@
+meta_product_name: "PronostkR"
+meta_title: "PronostkR - A fun forecasts platform on esports competitions"
+meta_description: "PronostkR is a fun forecasts platform on esports competitions. You can create a private league with your friends and compare your results match after match"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
