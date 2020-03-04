@@ -1,7 +1,7 @@
 <div class="forecast-card d-flex justify-content-around align-items-center">
   <%= render 'forecasts/form', match: match %>
 
-  <div class="team-card <%= %> " id="team-a" data-team-id="<%= match.teams[0].id %>">
+  <div class="<%= team_classnames(current_user, match, match.teams[0]) %>" id="team-a" data-team-id="<%= match.teams[0].id %>">
     <p class="team-name"><%= match.teams[0].name %></p>
     <%= image_tag match.teams[0].logo_url || "teams/lewagon-logo.png", class: "team-logo team-a-logo" %>
   </div>
@@ -10,7 +10,7 @@
     <%= image_tag versus_image_path %>
   </div>
 
-  <div class="team-card" id="team-b" data-team-id="<%= match.teams[1].id %>">
+  <div class="<%= team_classnames(current_user, match, match.teams[1]) %>" id="team-b" data-team-id="<%= match.teams[1].id %>">
     <%= image_tag match.teams[1].logo_url || "teams/lewagon-logo.png", class: "team-logo team-b-logo" %>
     <p class="team-name"><%= match.teams[1].name %></p>
   </div>
