@@ -41,8 +41,14 @@
     
     <div class="col-8">
       <div class="forecasts-list">
-        <% competition.matches.each do |match| %>
-        <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
+        <% competition.matches.live.each do |match| %>
+          <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
+        <% end %>
+        <% competition.matches.upcoming.each do |match| %>
+          <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
+        <% end %>
+        <% competition.matches.finished.each do |match| %>
+          <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
         <% end %>
       </div>
     </div>

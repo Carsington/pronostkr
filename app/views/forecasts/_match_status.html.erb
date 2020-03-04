@@ -3,5 +3,5 @@
 <% elsif match.live? %>
   <p class="status-ongoing"><i class="fas fa-circle"></i> En cours</p>
 <% elsif match.upcoming? %>
-  <%= render 'forecasts/countdown' %>
+  <p><%= match.countdown %></p>
 <% end %>
