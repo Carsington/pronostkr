@@ -61,22 +61,34 @@
         </ul>
         <div class="tab-content" id="pills-tabContent">
           <div class="<%= tab_class_names(:upcoming, params[:upcoming_page]) %>" id="pills-upcoming" role="tabpanel" aria-labelledby="pills-upcoming-tab">
-            <% @upcoming_matches.each do |match| %>
+            <% if @upcoming_matches.empty? %>
+              <p class="text-center my-5">Aucun match à venir.</p>
+            <% else %>
+              <% @upcoming_matches.each do |match| %>
               <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
+              <% end %>
+              <%= paginate @upcoming_matches, param_name: :upcoming_page %>
             <% end %>
-            <%= paginate @upcoming_matches, param_name: :upcoming_page %>
           </div>
           <div class="<%= tab_class_names(:live, params[:live_page]) %>" id="pills-live" role="tabpanel" aria-labelledby="pills-live-tab">
-            <% @live_matches.each do |match| %>
-              <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
+            <% if @live_matches.empty? %>
+              <p class="text-center my-5">Aucun match en ce moment.</p>
+            <% else %>
+              <% @live_matches.each do |match| %>
+                <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
+              <% end %>
+              <%= paginate @live_matches, param_name: :live_page %>
             <% end %>
-            <%= paginate @live_matches, param_name: :live_page %>
           </div>
           <div class="<%= tab_class_names(:finished, params[:finished_page]) %>" id="pills-finished" role="tabpanel" aria-labelledby="pills-finished-tab">
-            <% @finished_matches.each do |match| %>
-              <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
+            <% if @finished_matches.empty? %>
+              <p class="text-center my-5">Aucun match terminé.</p>
+            <% else %>
+              <% @finished_matches.each do |match| %>
+                <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
+              <% end %>
+              <%= paginate @finished_matches, param_name: :finished_page %>
             <% end %>
-            <%= paginate @finished_matches, param_name: :finished_page %>
           </div>
         </div>
 
