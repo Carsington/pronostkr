@@ -12,22 +12,11 @@ Competition.destroy_all
 Game.destroy_all
 
 #USERS
-User.create!(
+pilou = User.create!(
   email: "pilou@example.com",
   username: "pilou",
   password: "cocorico"
 )
-
-# require "faker"
-# 10.times do
-#   username = Faker::Internet.unique.username
-#   User.create!(
-#     email: Faker::Internet.safe_email(name: username),
-#     username: username,
-#     password: "cocorico"
-#   )
-# end
-# puts "Built #{User.count} User instances!"
 
 # GAMES
 Game.create!(full_name: "Counter-Strike: Global Offensive", acronym: "cs-go", logo: "https://1000logos.net/wp-content/uploads/2017/12/CSGO-Symbol.jpg")
@@ -106,5 +95,21 @@ Competition.all.each do |competition|
 
   puts "Built #{Match.count} Match instances!"
 end
+
+# CUSTOM LEAGUE W/ USERS & FORECASTS
+
+require "faker"
+10.times do
+  username = Faker::Internet.unique.username
+  User.create!(
+    email: Faker::Internet.safe_email(name: username),
+    username: username,
+    password: "cocorico"
+  )
+end
+puts "Built #{User.count} User instances!"
+
+League.create(name: "Ligue du Wagon", slug: "LWAGON", competition: Competition.find_by(name: "LCL"))
+puts "Built LCL League with #LWAGON slug!"
 
 puts "Seed complete!"

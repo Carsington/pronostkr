@@ -3,8 +3,14 @@
     <div class="col-9">
       <div class="matches">
         <h1 class="mb-4">Mes pronos</h1>
-        <% @league.competition.matches.each do |match| %>
-        <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
+        <% @league.competition.matches.live.each do |match| %>
+          <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
+        <% end %>
+        <% @league.competition.matches.upcoming.each do |match| %>
+          <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
+        <% end %>
+        <% @league.competition.matches.finished.each do |match| %>
+          <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
         <% end %>
       </div>
     </div>
