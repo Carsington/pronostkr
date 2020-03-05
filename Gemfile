@@ -21,6 +21,7 @@ gem 'pg_search', '~> 2.3.0'
 gem 'cloudinary', '~> 1.12.0'
 gem 'faker' # , groups: [:development, :test]
 gem 'rails_real_favicon', groups: [:development]
+gem 'kaminari'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
