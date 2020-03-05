@@ -40,13 +40,13 @@ class Competition < ApplicationRecord
     }
 
   def general_league
-    League.find_by(slug: self.name)
+    League.find_by(slug: self.name.downcase)
   end
 
   private
 
   def build_general_league
-    League.create(name: "Général #{self.name}", slug: "#{self.name}", competition: self )
+    League.create(name: "Général #{self.name}", slug: "#{self.name}".downcase, competition: self )
   end
 
 end

@@ -65,7 +65,8 @@ Competition.all.each do |competition|
 
     this_match = Match.create!(
       scheduled_time: match["scheduled_at"],
-      competition: competition
+      competition: competition,
+      live_url: match["live_url"]
     )
 
     opponents = match["opponents"]
@@ -108,7 +109,7 @@ require "faker"
 end
 puts "Built #{User.count} User instances!"
 
-league = League.create!(name: "Ligue du Wagon", slug: "LWAGON", competition: Competition.find_by(name: "LCL"))
+league = League.create!(name: "Ligue du Wagon", slug: "lwagon", competition: Competition.find_by(name: "LCL"))
 puts "Built LCL League with #LWAGON slug!"
 
 User.all.each do |user|

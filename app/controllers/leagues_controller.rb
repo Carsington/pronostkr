@@ -1,7 +1,7 @@
 class LeaguesController < ApplicationController
 
   def join_league
-    league = League.find_by(slug: params[:league][:slug])
+    league = League.find_by(slug: params[:league][:slug].downcase)
     if league.present?
       participation = UserLeague.new(user: current_user, league: league)
       if participation.save
@@ -58,6 +58,6 @@ class LeaguesController < ApplicationController
     all_slugs = League.all.map { |league| league.slug }
     slug = (0...6).map { (('a'..'z')).to_a[rand(26)] }.join while all_slugs.include? slug
 
-    return slug.upcase
+    return slug
   end
 end
