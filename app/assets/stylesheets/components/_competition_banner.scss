@@ -3,6 +3,22 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("games/lol-banner.jpg");
   background-size: cover;
   background-position: top;
+
+  .lol
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("games/lol-banner.jpg");
+  }
+
+  .cs-go {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("games/cs-go-banner.jpg");
+  }
+
+  .overwatch {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("games/overwatch-banner.jpg");
+  }
+
+  .rocket {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("games/rocket-banner.jpg");
+  }
 }
 
 .competition-banner {
