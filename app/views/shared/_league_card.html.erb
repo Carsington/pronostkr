@@ -4,9 +4,11 @@
     <p class="league-game"><%= league.competition.game.full_name %></p>
     <p class="league-competition"><%= league.competition.name %></p>
     <p class="league-competition-date">
-      <%= league.competition.start_date.strftime('%d-%m-%Y') %>
-      au
-      <%= league.competition.end_date.strftime('%d-%m-%Y') if league.competition.end_date %>
+      <% if league.competition.upcoming? %>
+        A partir du <%= league.competition.start_date.strftime('%d/%m/%Y') %>
+      <% else %>
+        Depuis le <%= league.competition.start_date.strftime('%d/%m/%Y') %>
+      <% end %>
     </p>
     <div class="d-flex justify-content-between">
       <p class="league-slug">
