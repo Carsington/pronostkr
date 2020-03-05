@@ -1,5 +1,5 @@
 <%= link_to league, class: 'league-link' do %>
-  <div class="league-card">
+  <div class="<%= league_images(league.competition.game.acronym) %>">
     <h4 class="league-title"><%= league.name %></h4>
     <p class="league-game"><%= league.competition.game.full_name %></p>
     <p class="league-competition"><%= league.competition.name %></p>

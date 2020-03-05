@@ -8,8 +8,6 @@
 }
 
 .league-card {
-  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("https://pic.clubic.com/v1/images/1775169/raw?width=1200&fit=max&hash=73e51752cc8a9f17d18e110229fae45e2e28a9ba");
-  // background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("https://i.ytimg.com/vi/qKCTarAvuMQ/maxresdefault.jpg");
   background-size: cover;
   color: $tier1-txt;
   width: 350px;
@@ -44,8 +42,38 @@
   }
 }
 
-.league-card:hover {
-  color: $tier1-txt-selected;
-  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("https://pic.clubic.com/v1/images/1775169/raw?width=1200&fit=max&hash=73e51752cc8a9f17d18e110229fae45e2e28a9ba");
-  // background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("https://i.ytimg.com/vi/qKCTarAvuMQ/maxresdefault.jpg");
+.league-img-cs {
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("games/cs-go-banner.jpg");
+
+  &:hover {
+    color: $tier1-txt-selected;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("games/cs-go-banner.jpg");
+  }
+}
+
+.league-img-rl {
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("games/rocket-banner.jpg");
+
+  &:hover {
+    color: $tier1-txt-selected;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("games/rocket-banner.jpg");
+  }
+}
+
+.league-img-ow {
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("games/overwatch-banner.jpg");
+
+  &:hover {
+    color: $tier1-txt-selected;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("games/overwatch-banner.jpg");
+  }
+}
+
+.league-img-lol {
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("games/lol-banner.jpg");
+
+  &:hover {
+    color: $tier1-txt-selected;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("games/lol-banner.jpg");
+  }
 }
