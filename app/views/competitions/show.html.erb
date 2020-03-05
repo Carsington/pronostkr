@@ -45,54 +45,7 @@
   <div class="row competition-content">
 
     <div class="col-8 d-flex flex-column align-items-center">
-      <h1 class="mb-4">Mes pronos</h1>
-      <div class="forecasts-list">
-
-        <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
-          <li class="nav-item">
-            <a class="<%= pill_class_names(:upcoming, params[:upcoming_page])%>" id="pills-upcoming-tab" data-toggle="pill" href="#pills-upcoming" role="tab" aria-controls="pills-upcoming" aria-selected="true">À venir</a>
-          </li>
-          <li class="nav-item">
-            <a class="<%= pill_class_names(:live, params[:live_page])%>" id="pills-live-tab" data-toggle="pill" href="#pills-live" role="tab" aria-controls="pills-live" aria-selected="false"><i class="fas fa-circle"></i> Live</a>
-          </li>
-          <li class="nav-item">
-            <a class="<%= pill_class_names(:finished, params[:finished_page])%>" id="pills-finished-tab" data-toggle="pill" href="#pills-finished" role="tab" aria-controls="pills-finished" aria-selected="false">Terminés</a>
-          </li>
-        </ul>
-        <div class="tab-content" id="pills-tabContent">
-          <div class="<%= tab_class_names(:upcoming, params[:upcoming_page]) %>" id="pills-upcoming" role="tabpanel" aria-labelledby="pills-upcoming-tab">
-            <% if @upcoming_matches.empty? %>
-              <p class="text-center my-5">Aucun match à venir.</p>
-            <% else %>
-              <% @upcoming_matches.each do |match| %>
-              <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
-              <% end %>
-              <%= paginate @upcoming_matches, param_name: :upcoming_page %>
-            <% end %>
-          </div>
-          <div class="<%= tab_class_names(:live, params[:live_page]) %>" id="pills-live" role="tabpanel" aria-labelledby="pills-live-tab">
-            <% if @live_matches.empty? %>
-              <p class="text-center my-5">Aucun match en ce moment.</p>
-            <% else %>
-              <% @live_matches.each do |match| %>
-                <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
-              <% end %>
-              <%= paginate @live_matches, param_name: :live_page %>
-            <% end %>
-          </div>
-          <div class="<%= tab_class_names(:finished, params[:finished_page]) %>" id="pills-finished" role="tabpanel" aria-labelledby="pills-finished-tab">
-            <% if @finished_matches.empty? %>
-              <p class="text-center my-5">Aucun match terminé.</p>
-            <% else %>
-              <% @finished_matches.each do |match| %>
-                <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
-              <% end %>
-              <%= paginate @finished_matches, param_name: :finished_page %>
-            <% end %>
-          </div>
-        </div>
-
-      </div>
+      <%= render 'shared/forecasts_list' %>
     </div>
 
     <!-- TWITCH LIVE -->

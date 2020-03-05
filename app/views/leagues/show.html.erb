@@ -1,23 +1,14 @@
 <div class="container">
   <div class="row my-pronos mt-3">
-    <div class="col-9">
+    <div class="col-9 d-flex flex-column align-items-center">
       <div class="matches">
-        <h1 class="mb-4">Mes pronos</h1>
-        <% @league.competition.matches.live.each do |match| %>
-          <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
-        <% end %>
-        <% @league.competition.matches.upcoming.each do |match| %>
-          <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
-        <% end %>
-        <% @league.competition.matches.finished.each do |match| %>
-          <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
-        <% end %>
+        <%= render 'shared/forecasts_list' %>
       </div>
     </div>
 
     <div class="col-3">
       <div class="classement">
-        <h1>Classement</h1>
+        <h1 class="text-center">Classement</h1>
         <div class="table-ranking border border-secondary p-2 my-3">
           <%= render 'shared/table_ranking' %>
         </div>

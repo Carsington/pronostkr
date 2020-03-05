@@ -20,6 +20,10 @@ class LeaguesController < ApplicationController
   def show
     @league = League.find(params[:id])
     @page_title = @league.name
+    @competition = @league.competition
+    @live_matches = @competition.matches.live.page(params[:live_page] || 1)
+    @upcoming_matches = @competition.matches.upcoming.page(params[:upcoming_page] || 1)
+    @finished_matches = @competition.matches.finished.page(params[:finished_page] || 1)
     unless @league.name.start_with?("Gén")
       @page_slug = " - #" + @league.slug
     end
@@ -52,7 +56,7 @@ class LeaguesController < ApplicationController
   def generate_slug
     slug = '000000'
     all_slugs = League.all.map { |league| league.slug }
-    slug = (0...6).map { (('a'..'z')).to_a[rand(26)] }.join while all_slugs.include? slug 
+    slug = (0...6).map { (('a'..'z')).to_a[rand(26)] }.join while all_slugs.include? slug
 
     return slug.upcase
   end
