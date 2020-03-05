@@ -8,8 +8,8 @@ class Match < ApplicationRecord
 
   scope :upcoming,         -> { where("scheduled_time > ?", Time.now).order(:scheduled_time) }
   scope :live_or_finished, -> { where("scheduled_time < ?", Time.now) }
-  scope :live,             -> { live_or_finished.joins(:team_matches).where("team_matches.is_winner IS NULL").distinct.order(:scheduled_time).reverse }
-  scope :finished,         -> { live_or_finished.joins(:team_matches).where("team_matches.is_winner IS NOT NULL").distinct.order(:scheduled_time).reverse }
+  scope :live,             -> { live_or_finished.joins(:team_matches).where("team_matches.is_winner IS NULL").distinct.order(:scheduled_time) }
+  scope :finished,         -> { live_or_finished.joins(:team_matches).where("team_matches.is_winner IS NOT NULL").distinct.order(:scheduled_time) }
 
   def upcoming?
     Match.upcoming.include? self

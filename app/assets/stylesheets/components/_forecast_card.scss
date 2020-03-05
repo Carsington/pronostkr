@@ -1,7 +1,6 @@
 .forecast-card {
-  // background: $tier2-bg;
   background: $tier2-button-hover;
-  width: 800px;
+  width: 700px;
   border-radius: 4px;
   padding: 16px 48px;
   margin-bottom: 16px;
@@ -32,7 +31,6 @@
   transition: 0.2s;
 
   &:hover {
-    // background: $tier2-button;
     background: $discord-green-2;
     box-shadow: 0 0 8px $discord-green-2;
     border-radius: 6px;
@@ -43,6 +41,13 @@
 
 #team-a {
   justify-content: flex-end;
+}
+
+.team-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 135px;
 }
 
 .team-logo {
