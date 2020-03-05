@@ -22,11 +22,11 @@
             </td>
             <td class="infos-item middle-item">
               <p class="item-head">Matchs terminés</p>
-              <p class="item-content"><%= @finished_matches.count %></p>
+              <p class="item-content"><%= @league.competition.matches.finished.count %></p>
             </td>
             <td class="infos-item middle-item">
               <p class="item-head">Matchs à pronostiquer</p>
-              <p class="item-content"><%= @upcoming_matches.count %></p>
+              <p class="item-content"><%= @league.competition.matches.upcoming.count %></p>
             </td>
             <td class="infos-item last-item">
               <p class="item-head">Meilleur pronostiqueur</p>
