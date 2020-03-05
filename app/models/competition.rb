@@ -46,7 +46,7 @@ class Competition < ApplicationRecord
   private
 
   def build_general_league
-    League.create(name: "Général #{self.name}", slug: "#{self.name}".downcase, competition: self )
+    League.create(name: "Générale #{self.name}", slug: "#{self.name}".downcase, competition: self )
   end
 
 end

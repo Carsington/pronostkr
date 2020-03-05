@@ -1,4 +1,4 @@
-<div class="<%= banner_images(@competition.game.acronym) %>">
+<div class="<%= banner_images(@competition.game.acronym, "competition") %>">
   <div class="container">
     <div class="row competition-banner">
       <div class="banner-head d-flex">
@@ -19,12 +19,12 @@
               <p class="item-head">Début</p>
               <p class="item-content"><%= @competition.start_date.strftime('%d.%m.%Y') %></p>
             </td>
-            <td class="infos-item second-item">
+            <td class="infos-item middle-item">
               <p class="item-head">Matchs</p>
               <p class="item-content"><%= @competition.matches.count %></p>
             </td>
             <% if @competition.url %>
-              <td class="infos-item third-item">
+              <td class="infos-item last-item">
                 <%= link_to "Site officiel", @competition.url, target: "_blank", class: "btn btn-info" %>
               </td>
             <% end %>
@@ -42,7 +42,7 @@
 </div>
 
 <div class="container">
-  <div class="row competition-content">
+  <div class="row competition-content mb-4">
 
     <div class="col-8 d-flex flex-column align-items-center">
       <%= render 'shared/forecasts_list' %>

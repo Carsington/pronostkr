@@ -1,15 +1,15 @@
 module BannerHelper
-  def banner_images(game_acronym)
+  def banner_images(game_acronym, page)
     image = ['competition-banner-img']
     case game_acronym
       when "cs-go"
-        image << "cs-go"
+        image << "cs-go-#{page}"
       when "league-of-legends"
-        image << "lol"
+        image << "lol-#{page}"
       when "ow"
-        image << "overwatch"
+        image << "overwatch-#{page}"
       when "rl"
-        image << "rocket"
+        image << "rocket-#{page}"
     end
     image.join(" ")
   end
