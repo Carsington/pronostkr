@@ -17,11 +17,8 @@
 
   <div class="match-status d-flex">
     <%= render 'forecasts/match_status', match: match %>
-  </div>
-
-  <% unless match.finished? or match.live_url.nil? %>
-    <div>
+    <% unless match.finished? or match.live_url.nil? %>
       <%= render 'forecasts/live_url', match: match %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

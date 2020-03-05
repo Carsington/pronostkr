@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between">
       <p class="banner-league-slug">
         <i class="fas fa-hashtag"></i>
-        <%= league.slug || 'K2000' %>
+        <%= league.slug.upcase || 'K2000' %>
       </p>
       <p class="banner-league-members-count">
         <%= league.users.count %>
