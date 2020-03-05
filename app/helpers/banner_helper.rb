@@ -11,8 +11,8 @@ module BannerHelper
       image << "overwatch"
     when "rl"
       image << "rocket"
-  end
-  image.join(" ")
+    end
+    image.join(" ")
   end
 
 end
