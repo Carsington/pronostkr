@@ -54,7 +54,7 @@ class LeaguesController < ApplicationController
   end
 
   def generate_slug
-    slug = '000000'
+    slug = 'lwagon'
     all_slugs = League.all.map { |league| league.slug }
     slug = (0...6).map { (('a'..'z')).to_a[rand(26)] }.join while all_slugs.include? slug
 
