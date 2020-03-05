@@ -1,0 +1,16 @@
+<div class="ranking-header d-flex justify-content-between">
+  <div class="player-name">Joueur</div>
+  <div class="player-score">% bons pronos</div>
+</div>
+
+<% @league.ranking.each_with_index do |ranked_user, i| %>
+  <% podium = '' %>
+  <% podium = 'first-place' if i == 0 %>
+  <% podium = 'second-place' if i == 1 %>
+  <% podium = 'third-place' if i == 2 %>
+
+  <div class="player-ranked <%= podium %>  d-flex justify-content-between py-1 pl-2">
+    <div class="player-name"><%= ranked_user.username %> <%= i+1 %></div>
+    <div class="player-score"><%= (ranked_user.user_leagues.find_by(league: @league).score / @league.competition.matches.count.to_f * 100).to_i %>%</div>
+  </div>
+<% end %>

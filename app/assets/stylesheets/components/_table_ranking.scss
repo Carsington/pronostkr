@@ -1,0 +1,24 @@
+.ranking-header {
+	border-bottom: 1px solid $gray-300;
+}
+
+.player-ranked {
+	color: $gray-0;
+	border-bottom: 1px solid $gray-511;
+
+	.player-score {
+		font-weight: bold;
+	}
+}
+
+.first-place {
+	border-left: 3px solid $golden-yellow;
+}
+
+.second-place {
+	border-left: 3px solid $gray-200;
+}
+
+.third-place {
+	border-left: 3px solid #8C7853;
+}

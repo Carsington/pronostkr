@@ -18,10 +18,8 @@
     <div class="col-3">
       <div class="classement">
         <h1>Classement</h1>
-        <div class="card-match border border-secondary p-2 my-3">
-          <ol><% @league.ranking.each do |ranked_user| %>
-            <li><%= ranked_user.username %> - <%= (ranked_user.user_leagues.find_by(league: @league).score / @league.competition.matches.count.to_f * 100).to_i %>%</li>
-          <% end %></ol>
+        <div class="table-ranking border border-secondary p-2 my-3">
+          <%= render 'shared/table_ranking' %>
         </div>
 
         <%= link_to @league.competition.name, @league.competition, class: "btn btn-outline-warning" %>
