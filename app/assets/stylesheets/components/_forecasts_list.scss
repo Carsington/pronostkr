@@ -1,0 +1,20 @@
+.nav-pills {
+  .nav-link {
+    color: $gray-300;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $tier2-button-hover;
+    }
+  }
+
+  .nav-link.active {
+    background-color: $tier2-button-hover !important;
+    color: $golden-yellow;
+  }
+
+  .fa-circle {
+    font-size: 12px;
+    color: $discord-red;
+  }
+}
