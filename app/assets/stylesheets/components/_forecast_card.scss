@@ -4,7 +4,8 @@
   border-radius: 4px;
   padding: 16px 48px;
   margin-bottom: 16px;
-  box-shadow: 0 0 4px $golden-yellow;
+  box-shadow: 0 0 4px $gray-400;
+  transition: 0.1s;
 
   p {
     margin-bottom: 0;
@@ -14,6 +15,13 @@
 
   .fa-circle {
     font-size: 12px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 5px $gray-100;
+    background: $gray-800;
+    transform: scale(1.02);
+    transition: 0.1s;
   }
 }
 
