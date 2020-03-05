@@ -1,4 +1,3 @@
-require 'faker'
 class LeaguesController < ApplicationController
 
   def join_league
@@ -27,7 +26,7 @@ class LeaguesController < ApplicationController
   end
 
   def create
-    slug = Faker::Lorem.unique.characters(number: 6).upcase
+    slug = generate_slug
     @league = League.new(league_params)
     @league.slug = slug
     user_league = UserLeague.new(user: current_user, league: @league, is_owner: true)
@@ -48,5 +47,13 @@ class LeaguesController < ApplicationController
 
   def league_params
     params.require(:league).permit(:name, :competition_id, :slug)
+  end
+
+  def generate_slug
+    slug = '000000'
+    all_slugs = League.all.map { |league| league.slug }
+    slug = (0...6).map { (('a'..'z')).to_a[rand(26)] }.join while all_slugs.include? slug 
+
+    return slug.upcase
   end
 end
