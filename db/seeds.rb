@@ -3,7 +3,8 @@ require "rest-client"
 
 puts "Destroying old instances..."
 
-# User.destroy_all
+User.destroy_all
+Forecast.destroy_all
 Player.destroy_all
 Team.destroy_all
 Match.destroy_all
