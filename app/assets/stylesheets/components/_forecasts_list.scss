@@ -2,9 +2,11 @@
   .nav-link {
     color: $gray-300;
     font-weight: bold;
+    margin: 0 8px;
 
     &:hover {
       background-color: $tier2-button-hover;
+      color: $gray-0;
     }
   }
 
@@ -16,5 +18,29 @@
   .fa-circle {
     font-size: 12px;
     color: $discord-red;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+
+  a {
+    color: $gray-300;
+
+    &:hover {
+      text-decoration: none;
+      color: $gray-0;
+    }
+  }
+
+  .page, .first, .prev, .next, .last {
+    margin: 0 4px;
+  }
+
+  .current {
+    color: $golden-yellow;
+    font-weight: bold;
   }
 }
