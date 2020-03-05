@@ -86,6 +86,10 @@
   box-shadow: 0 0 8px $discord-green;
   background-color: $discord-green;
   border-radius: 6px;
+
+  &:hover {
+    background-color: $discord-green;
+  }
 }
 
 .losing-team {
