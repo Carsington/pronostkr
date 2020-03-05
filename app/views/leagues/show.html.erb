@@ -1,19 +1,62 @@
+<div class="<%= banner_images(@competition.game.acronym, "league") %>">
+  <div class="container">
+    <div class="row competition-banner">
+      <div class="banner-head d-flex">
+        <h1>
+          <strong>Ligue <%= @league.name %></strong>
+          <%= link_to @league.competition.name, @league.competition, class: "btn btn-outline-warning" %>
+        </h1>
+        <%= image_tag(logo_images(@competition.game.acronym), class: "game-logo") %>
+      </div>
+      <h4><%= @competition.game.full_name %></h4>
+      <table class="competition-infos">
+        <tbody>
+          <tr>
+            <td class="infos-item first-item">
+              <p class="item-head">Création</p>
+              <p class="item-content"><%= @league.created_at.strftime('%d.%m.%Y') %></p>
+            </td>
+            <td class="infos-item middle-item">
+              <p class="item-head">Membres</p>
+              <p class="item-content"><%= @league.users.count %></p>
+            </td>
+            <td class="infos-item middle-item">
+              <p class="item-head">Matchs terminés</p>
+              <p class="item-content"><%= @finished_matches.count %></p>
+            </td>
+            <td class="infos-item middle-item">
+              <p class="item-head">Matchs à pronostiquer</p>
+              <p class="item-content"><%= @upcoming_matches.count %></p>
+            </td>
+            <td class="infos-item last-item">
+              <p class="item-head">Meilleur pronostiqueur</p>
+              <% if @league.ranking.first.present? %>
+              <p class="item-content"><%= @league.ranking.first.username %></p>
+              <% else %>
+              <p> - </p>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="row my-pronos mt-3">
-    <div class="col-9 d-flex flex-column align-items-center">
+    <div class="col-8 d-flex flex-column align-items-center">
       <div class="matches">
         <%= render 'shared/forecasts_list' %>
       </div>
     </div>
 
-    <div class="col-3">
+    <div class="col-4">
       <div class="classement">
         <h1 class="text-center">Classement</h1>
         <div class="table-ranking border border-secondary p-2 my-3">
           <%= render 'shared/table_ranking' %>
         </div>
-
-        <%= link_to @league.competition.name, @league.competition, class: "btn btn-outline-warning" %>
 
       </div>
     </div>

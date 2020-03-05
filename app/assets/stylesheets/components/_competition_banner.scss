@@ -3,20 +3,36 @@
   background-position: center;
 }
 
-.lol {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), asset-url("games/lol-banner.jpg");
+.lol-competition {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), asset-url("games/lol-banner.jpg");
 }
 
-.cs-go {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), asset-url("games/cs-go-banner.jpg");
+.cs-go-competition {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), asset-url("games/cs-go-banner.jpg");
 }
 
-.overwatch {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), asset-url("games/overwatch-banner.jpg");
+.overwatch-competition {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), asset-url("games/overwatch-banner.jpg");
 }
 
-.rocket {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), asset-url("games/rocket-banner.jpg");
+.rocket-competition {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), asset-url("games/rocket-banner.jpg");
+}
+
+.lol-league {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), asset-url("games/lol-banner.jpg");
+}
+
+.cs-go-league {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), asset-url("games/cs-go-banner.jpg");
+}
+
+.overwatch-league {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), asset-url("games/overwatch-banner.jpg");
+}
+
+.rocket-league {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), asset-url("games/rocket-banner.jpg");
 }
 
 .competition-banner {
@@ -34,6 +50,16 @@
   h2 {
     margin-bottom: 0;
     font-weight: bold;
+  }
+
+  .btn-outline-warning {
+    background: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    margin-left: 24px;
+
+    &:hover {
+      background-color: $golden-yellow-transparent;
+    }
   }
 }
 
@@ -70,21 +96,21 @@
 
 .first-item {
   padding-right: 20px;
-  border-right: 1px solid $gray-400;
 }
 
-.second-item {
+.middle-item {
   padding: 0 20px;
+  border-left: 1px solid $gray-400;
 }
 
-.third-item {
+.last-item {
   padding-left: 20px;
   border-left: 1px solid $gray-400;
 }
 
 .item-head {
   font-size: 14px;
-  color: $gray-300;
+  color: $gray-200;
 }
 
 .item-content {

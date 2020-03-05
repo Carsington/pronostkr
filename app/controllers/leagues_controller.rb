@@ -19,7 +19,6 @@ class LeaguesController < ApplicationController
 
   def show
     @league = League.find(params[:id])
-    @page_title = @league.name
     @competition = @league.competition
     @live_matches = @competition.matches.live.page(params[:live_page] || 1)
     @upcoming_matches = @competition.matches.upcoming.page(params[:upcoming_page] || 1)
