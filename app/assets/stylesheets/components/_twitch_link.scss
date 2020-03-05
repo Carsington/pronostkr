@@ -1,0 +1,13 @@
+.live-url {
+	text-decoration: none;
+	color: rgba(156, 68, 255, 1);
+	justify-content: center;
+
+	i {
+		font-size: 24px;
+	}
+
+	&:hover {
+		color: rgba(156, 68, 255, 0.7);
+	}
+}
