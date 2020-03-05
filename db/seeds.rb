@@ -21,7 +21,6 @@ pilou = User.create!(
 # GAMES
 Game.create!(full_name: "Counter-Strike: Global Offensive", acronym: "cs-go", logo: "https://1000logos.net/wp-content/uploads/2017/12/CSGO-Symbol.jpg")
 Game.create!(full_name: "League of Legends", acronym: "league-of-legends", logo: "https://pre.breakflip.com/uploads/Drui/Avril%202018/Images/Lol.png")
-# Game.create!(full_name: "Fortnite", acronym: "fortnite")
 Game.create!(full_name: "Overwatch", acronym: "ow", logo: "https://gamepedia.cursecdn.com/overwatch_gamepedia/thumb/b/b2/Overwatch_White.jpg/350px-Overwatch_White.jpg?version=b9ad5966dd0c3946bc449870ecd1ba09")
 Game.create!(full_name: "Rocket League", acronym: "rl", logo: "https://www.dafont.com/forum/attach/orig/5/1/517500.png")
 
@@ -109,7 +108,23 @@ require "faker"
 end
 puts "Built #{User.count} User instances!"
 
-League.create(name: "Ligue du Wagon", slug: "LWAGON", competition: Competition.find_by(name: "LCL"))
+league = League.create!(name: "Ligue du Wagon", slug: "LWAGON", competition: Competition.find_by(name: "LCL"))
 puts "Built LCL League with #LWAGON slug!"
+
+User.all.each do |user|
+  UserLeague.create!(
+    user: user,
+    league: league,
+    is_owner: false
+  )
+
+  league.competition.matches.each do |match|
+    Forecast.create!(
+      user: user,
+      match: match,
+      team: match.teams.sample
+    )
+  end
+end
 
 puts "Seed complete!"
