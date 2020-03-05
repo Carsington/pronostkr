@@ -5,6 +5,7 @@
   transition: text-shadow 0.25s;
   z-index: 1;
   position: relative;
+  border: 0;
 
   &:before {
     content: '';

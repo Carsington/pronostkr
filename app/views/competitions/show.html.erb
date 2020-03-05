@@ -1,4 +1,4 @@
-<div class="competition-banner-img">
+<div class="<%= banner_images(competition.game.acronym) %>">
   <div class="container">
     <div class="row competition-banner">
       <div class="banner-head d-flex">
@@ -9,7 +9,7 @@
           </div>
           <h2><%= @competition.name %></h2>
         </div>
-        <%= image_tag("games/cs-go-logo.png", class: "game-logo") %>
+        <%= image_tag(logo_images(competition.game.acronym), class: "game-logo") %>
       </div>
       <h5><%= @competition.game.full_name %></h5>
       <table class="competition-infos">

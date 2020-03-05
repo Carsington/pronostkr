@@ -1,8 +1,22 @@
 .competition-banner-img {
-  // background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("https://pic.clubic.com/v1/images/1775169/raw?width=1200&fit=max&hash=73e51752cc8a9f17d18e110229fae45e2e28a9ba");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("games/lol-banner.jpg");
   background-size: cover;
-  background-position: top;
+  background-position: center;
+}
+
+.lol {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("games/lol-banner.jpg");
+}
+
+.cs-go {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("games/cs-go-banner.jpg");
+}
+
+.overwatch {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("games/overwatch-banner.jpg");
+}
+
+.rocket {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("games/rocket-banner.jpg");
 }
 
 .competition-banner {
@@ -44,6 +58,8 @@
 .game-logo {
   height: 70px;
 }
+
+
 
 .competition-infos {
   display: flex;
