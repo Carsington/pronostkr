@@ -26,6 +26,20 @@
       <% if @live_matches.empty? %>
         <p class="text-center my-5">Aucun match en ce moment.</p>
       <% else %>
+        <!-- TWITCH LIVE -->
+        <% abc = "https://player.twitch.tv/?channel=" %>
+        <% url = @competition.matches.live.first.live_url.split("https://www.twitch.tv/")[1] %>
+        <% xyz = "&muted=false" %>
+        <!-- src="https://player.twitch.tv/?channel=esl_csgo&muted=false" -->
+        <iframe
+          src="<%= abc + url + xyz %>"
+          height="394"
+          width="700"
+          frameborder="0"
+          scrolling="no"
+          allowfullscreen="true"
+          autoplay="true">
+        </iframe>
         <% @live_matches.each do |match| %>
           <%= render 'forecasts/card_forecast', match: match, versus_image_path: "versus.png" %>
         <% end %>
