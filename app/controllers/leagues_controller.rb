@@ -24,7 +24,7 @@ class LeaguesController < ApplicationController
     @upcoming_matches = @competition.matches.upcoming.page(params[:upcoming_page] || 1)
     @finished_matches = @competition.matches.finished.page(params[:finished_page] || 1)
     unless @league.name.start_with?("Gén")
-      @page_slug = " - #" + @league.slug
+      @page_slug = "Ton code pour inviter tes amis - #" + @league.slug.upcase
     end
   end
 
