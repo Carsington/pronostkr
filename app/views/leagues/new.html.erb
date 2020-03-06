@@ -4,7 +4,7 @@
 
       <div class="new-league-card p-4">
         <%= simple_form_for([@league]) do |f| %>
-        <%= f.input :name, as: :string, label: false, placeholder: "Nom de ta ligue" %>
+        <%= f.input :name, as: :string, label: false, input_html: { autocomplete: 'off' }, placeholder: "Nom de ta ligue" %>
         <%= f.association :competition, label: false, prompt: "-- Choisis la compétition --", selected: @competition_id %>
         <%= f.submit "Crée ta ligue", class: "btn btn-outline-info" %>
         <% end %>
