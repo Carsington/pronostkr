@@ -28,7 +28,8 @@
       <% else %>
         <!-- TWITCH LIVE -->
         <% abc = "https://player.twitch.tv/?channel=" %>
-        <% url = @competition.matches.live.first.live_url.split("https://www.twitch.tv/")[1] %>
+        <%# url = @competition.matches.live.first.live_url.split("https://www.twitch.tv/")[1] %>
+        <% url = "ogaminglol" %>
         <% xyz = "&muted=false" %>
         <!-- src="https://player.twitch.tv/?channel=esl_csgo&muted=false" -->
         <iframe
